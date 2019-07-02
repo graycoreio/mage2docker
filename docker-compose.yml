@@ -1,0 +1,58 @@
+version : '3'
+
+services:
+  ingress:
+    build: ./nginx/1.17/alpine
+    ports:
+      - "80:8000"
+      - "443:8443"
+    networks:
+      - frontend
+  magento2:
+    build: ./php/7.2/alpine-develop
+    restart: always
+    networks:
+      - frontend
+      - backend
+  database:
+      image: mysql:5.7
+      volumes:
+       - db_data:/var/lib/mysql
+      restart: always
+      environment:
+            MYSQL_ROOT_PASSWORD: magento2
+            MYSQL_DATABASE: magento2
+            MYSQL_USER: magento2
+            MYSQL_PASSWORD: magento2
+      networks:
+        - backend
+  cache:
+    image: redis:5.0
+    networks:
+      - backend
+  fullpagecache:
+    image: redis:5.0
+    networks:
+      - backend
+  sessioncache:
+    image: redis:5.0
+    networks:
+      - backend
+  elasticsearch:
+    image: elasticsearch:5.6
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      - backend
+  blackfire:
+    image: blackfire/blackfire
+    env_file:
+      - blackfire/.env
+    networks:
+      - backend
+networks:
+  frontend:
+  backend:
+volumes:
+  db_data:

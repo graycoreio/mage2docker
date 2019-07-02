@@ -1,0 +1,20 @@
+version : '3'
+
+services: 
+  magento2:
+    volumes: &appvolumes
+      - appdata:/var/www/html
+      - ../app:/var/www/html/app:cached
+      - ../bin:/var/www/html/bin:cached
+      - ../lib:/var/www/html/lib:cached
+      - ../pub:/var/www/html/pub:delegated
+      - ../setup:/var/www/html/setup:cached
+      - ../update:/var/www/html/update:cached
+      - ../index.php:/var/www/html/index.php:cached
+      - ../nginx.conf.sample:/var/www/html/nginx.conf:cached
+      - ../composer.json:/var/www/html/composer.json:delegated
+      - ../composer.lock:/var/www/html/composer.lock:delegated
+  ingress:
+    volumes: *appvolumes
+volumes: 
+  appdata:
