@@ -45,12 +45,6 @@ services:
       - "9300:9300"
     networks:
       - backend
-  blackfire:
-    image: blackfire/blackfire
-    env_file:
-      - blackfire/.env
-    networks:
-      - backend
 networks:
   frontend:
   backend:

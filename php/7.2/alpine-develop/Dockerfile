@@ -1,39 +1,6 @@
-FROM php:7.2-fpm-alpine
+FROM graycore/magento-php:7.2-fpm-alpine
 
 MAINTAINER Damien Retzinger <damien@graycore.io>
-
-RUN apk update && apk add \
-  gzip \
-  freetype-dev \
-  icu-dev \
-  libjpeg-turbo-dev \
-  libpng-dev \
-  libxslt-dev \
-  lsof \
-  curl-dev \
-  libsodium-dev \
-  mysql-client \
-  vim \
-  zip
-
-RUN docker-php-ext-configure \
-  gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
-
-# https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#required-php-extensions
-RUN docker-php-ext-install \
-  bcmath \
-  gd \
-  hash \
-  intl \
-  opcache \
-  pdo_mysql \
-  simplexml \
-  soap \
-  xsl \
-  zip
-
-RUN curl -sS https://getcomposer.org/installer | \
-  php -- --install-dir=/usr/local/bin --filename=composer
 
 # Blackfire
 ENV current_os=alpine
@@ -45,7 +12,25 @@ RUN version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
     && printf "extension=blackfire.so\nblackfire.agent_socket=tcp://blackfire:8707\n" > $PHP_INI_DIR/conf.d/blackfire.ini \
     && rm -rf /tmp/blackfire /tmp/blackfire-probe.tar.gz
 
-
 COPY conf/php.ini /usr/local/etc/php/
+
+ENV MAGENTO_USER=app
+ENV MAGENTO_USER_UID=1000
+ENV MAGENTO_USER_GID=1000
+
+RUN addgroup --gid "$MAGENTO_USER_GID" "$MAGENTO_USER" && adduser \
+    --disabled-password \
+    --gecos "" \
+    --no-create-home \
+    --ingroup "$MAGENTO_USER" \
+    --uid "$MAGENTO_USER_UID" \
+    -h /var/www \
+    -s /bin/bash "$MAGENTO_USER"
+
+RUN mkdir -p /var/www/html && chown -R $MAGENTO_USER:$MAGENTO_USER /var/www/html
+
+USER app:app
+
+VOLUME /var/www/html
 
 WORKDIR /var/www/html

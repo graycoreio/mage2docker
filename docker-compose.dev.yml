@@ -4,6 +4,7 @@ services:
   magento2:
     volumes: &appvolumes
       - appdata:/var/www/html
+      - ~/.composer:/var/www/.composer:delegated
       - ../app:/var/www/html/app:cached
       - ../bin:/var/www/html/bin:cached
       - ../lib:/var/www/html/lib:cached
@@ -16,5 +17,11 @@ services:
       - ../composer.lock:/var/www/html/composer.lock:delegated
   ingress:
     volumes: *appvolumes
+  blackfire:
+    image: blackfire/blackfire
+    env_file:
+      - blackfire/.env
+    networks:
+      - backend
 volumes: 
   appdata:
