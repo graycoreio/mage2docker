@@ -14,5 +14,5 @@ rm app/etc/env.php
 ```
 
 ## This time with feeling
-See [./installing.md] to repeat the installation process.
+Follow along with the ["getting started"](../getting-started/existing-project.md) to reinstall your environment.
 

@@ -1,4 +1,6 @@
-# Getting Started
+# Getting Started with a new Magento Application
+
+
 
 ```bash
 MAGENTO_2_PROJECT_NAME=your_project_name
