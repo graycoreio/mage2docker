@@ -17,11 +17,11 @@ services:
       - ../composer.lock:/var/www/html/composer.lock:delegated
   ingress:
     volumes: *appvolumes
-  blackfire:
-    image: blackfire/blackfire
-    env_file:
-      - blackfire/.env
-    networks:
-      - backend
+  # blackfire:
+  #   image: blackfire/blackfire
+  #   env_file:
+  #     - blackfire/.env
+  #   networks:
+  #     - backend
 volumes: 
   appdata:
