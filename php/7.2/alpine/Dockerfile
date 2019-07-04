@@ -1,8 +1,8 @@
 FROM php:7.2-fpm-alpine
 
-MAINTAINER Damien Retzinger <damien@graycore.io>
+LABEL maintainer="damien@graycore.io"
 
-RUN apk update && apk add \
+RUN apk add --no-cache \
   gzip \
   freetype-dev \
   icu-dev \
@@ -13,21 +13,17 @@ RUN apk update && apk add \
   curl-dev \
   libsodium-dev \
   mysql-client \
-  vim \
   zip
 
-RUN docker-php-ext-configure \
-  gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
-
 # https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#required-php-extensions
-RUN docker-php-ext-install \
+# This layer must be run as one, not two - See: https://github.com/docker-library/php/issues/855
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+  && docker-php-ext-install \
   bcmath \
   gd \
-  hash \
   intl \
   opcache \
   pdo_mysql \
-  simplexml \
   soap \
   xsl \
   zip

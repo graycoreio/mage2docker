@@ -1,6 +1,6 @@
 FROM graycore/magento-php:7.2-fpm-alpine
 
-MAINTAINER Damien Retzinger <damien@graycore.io>
+LABEL maintainer="damien@graycore.io"
 
 # Blackfire
 ENV current_os=alpine
