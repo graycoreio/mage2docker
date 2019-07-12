@@ -13,6 +13,7 @@ RUN apk add --no-cache \
   curl-dev \
   libsodium-dev \
   mysql-client \
+  procps \
   zip
 
 # https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#required-php-extensions
