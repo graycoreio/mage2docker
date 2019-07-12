@@ -30,6 +30,10 @@ services:
     image: redis:5.0
     networks:
       - backend
+  message_queue:
+    image: rabbitmq:3.5
+    networks:
+      - backend
   fullpagecache:
     image: redis:5.0
     networks:
