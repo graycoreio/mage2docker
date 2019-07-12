@@ -8,6 +8,7 @@ services:
       - ~/.composer:/var/www/.composer:delegated
       - ../app:/var/www/html/app:cached
       - ../bin:/var/www/html/bin:cached
+      - ../dev:/var/www/html/dev:cached
       - ../lib:/var/www/html/lib:cached
       - ../pub:/var/www/html/pub:delegated
       - ../setup:/var/www/html/setup:cached
