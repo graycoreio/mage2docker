@@ -1,5 +1,0 @@
-# Why do you use composer in multiple places?
-
-One of the most important things to understand in this environment is how we've decided to address composer utilization when creating a project for the first time vs. maintaining an existing project.
-
-When setting up your project for the very first time, we ask that you use `composer` *locally* on your host machine. This is so that you can utilize all your normal development tools when working with your own version implementation of Magento. During a first time install of the Magento metapackage, composer will setup the entire Magento project that you could just zip up and deploy to a server somewhere. This includes all of the `vendor` packages that make up Magento and its dependencies. We don't need these on our host machine (in most cases), so
