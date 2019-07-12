@@ -14,6 +14,7 @@ services:
       - ../setup:/var/www/html/setup:cached
       - ../update:/var/www/html/update:cached
       - ../index.php:/var/www/html/index.php:cached
+      - ../mage2docker-modules:/var/www/html/mage2docker-modules:cached
       - ../nginx.conf.sample:/var/www/html/nginx.conf:cached
       - ../composer.json:/var/www/html/composer.json:delegated
       - ../composer.lock:/var/www/html/composer.lock:delegated
