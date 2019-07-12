@@ -1,0 +1,30 @@
+{
+  "name": "mage2docker",
+  "version": "1.0.0",
+  "description": "A performant, replicable, and production-like Magento 2 local development environment that leverages Docker.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "private": true,
+  "scripts": {
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graycoreio/mage2docker.git"
+  },
+  "keywords": [
+    "Magento",
+    "2"
+  ],
+  "author": "Damien Retzinger <damien@graycore.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/graycoreio/mage2docker/issues"
+  },
+  "homepage": "https://github.com/graycoreio/mage2docker#readme",
+  "devDependencies": {
+    "standard-version": "^6.0.1"
+  }
+}
