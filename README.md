@@ -14,7 +14,7 @@ This project intends to create a performant, replicable, and production-like Mag
     * [Installation w/ Docker](https://hub.docker.com/_/composer)
 
 ## Features
-* :clock: **5 Minute** Setup
+* :clock1: **5 Minute** Setup
 * :fire: Fast (~250ms Out-of-the-box)
 * :tada: Blackfire Performance Profiling
 * :evergreen_tree: Alpine Linux
