@@ -22,7 +22,7 @@ This project intends to create a performant, replicable, and production-like Mag
 ## Use Cases (User Stories)
 We intend to support the following common use cases:
 * [Working with an existing Magento 2 Project](./docs/stories/existing-project.md)
-* [Starting a new Magento 2 Project]()
+* [Starting a new Magento 2 Project](./docs/stories/new-project.md)
 * [Building Extensions for Magento as composer packages]()
 * [Running Unit and Integration Tests]()
 * [Complete Teardown and Reinstall]()
