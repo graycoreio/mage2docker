@@ -1,54 +1,38 @@
 # Getting Started with an existing Magento application
 
-We've designed Mage2Docker to be as simple to use as possible to use with an existing project and setup is broken down into a few discrete steps.
+We've designed Mage2Docker to be as simple as possible to use with an existing project.
 
-1. [Setting up your Magento Account](#setting-up-your-magento-account)
-2. [Setting up the Mage2Docker Project](#setting-up-the-mage2docker-project)
-3. [Starting the Mage2Docker environment](#starting-the-mage2docker-environment)
-4. [Installing the Magento 2 Dependencies](#installing-the-magento-2-dependencies)
-5. [Finalizing Magento 2 Installation](#finalizing-magento-2-installation)
-6. [Taking the Environment Down](#taking-the-environment-down)
+> This setup assumes that you have already setup your Magento account, composer, and your Magento composer credentials. If you have not done this, see the [new project setup](./new-project.md).
 
-## Setting up your Magento Account
-[The process of creating a Magento account is fully documented by Magento and you should follow their process](https://docs.magento.com/m2/ce/user_guide/magento/magento-account-create.html). 
+Setup is broken down into a few discrete steps, follow along and in a few minutes you will have a working Magento 2 project.
 
-### Configuring Composer with your Magento Credentials
-In case you have not done so, we will add your Magento composer authentication credentials to your local `auth.json`.
-
-First check to see if you have a credentials file under `~/.composer/auth.json`.
-
-```bash
-cat ~/.composer/auth.json
-```
-
-If you have a `auth.json` file here, you have most likely already configured your credentials and can skip to the next step.
-
-If you don't see your credentials there, [you can follow the Magento 2 guide to find your credentials](https://devdocs.magento.com/guides/v2.3/install-gde/prereq/connect-auth.html) and copy the `auth.json.sample` in the root of your Magento project to the `~/.composer/auth.json` file and fill out the required credentials.
-
-```bash
-cp /path/to/magento/project/auth.json.sample ~/.composer/auth.json
-```
+1. [Setting up the Mage2Docker environment](#setting-up-the-mage2docker-environment)
+2. [Installing the Magento 2 Dependencies](#installing-the-magento-2-dependencies)
+3. [Finalizing Magento 2 Installation](#finalizing-magento-2-installation)
+4. [Taking the Environment Down](#taking-the-environment-down)
 
 ## Setting up the Mage2Docker Project
-Now, in the root of your Magento 2 project:
+In the root of your Magento 2 project:
 
 ```bash
-git clone https://www.github.com/graycoreio/mage2docker && cd mage2docker
+git clone https://www.github.com/graycoreio/mage2docker \ 
+    && echo "mage2docker/" > .gitignore \
+    && cd mage2docker
 ```
 
-> From here on out, we're working immediately within the `mage2docker` directory nested inside your project.
+> From here on out, we assume that you're working immediately within the new `mage2docker` directory nested inside your project.
 
 ### Configuring Docker Composer
-Mage2Docker comes with a basic environment configuration file `.env.sample`.
+Mage2Docker comes with a basic environment configuration file `.env.sample`. Copy this file into a new `.env` file.
 
 ```bash
 cp .env.sample .env
 ```
 
-Fill out the name of your project in the `COMPOSE_PROJECT_NAME` key. If you have multiple Magento projects on your system, **please ensure that this value is unique**, otherwise you will find out that you've accidentally shared data between different projects and you'll be in for a world of pain.
+Now, fill out the name of your project in the `COMPOSE_PROJECT_NAME` key. If you have multiple Magento projects on your system, **please ensure that this value is unique**, otherwise you will find out that you've accidentally shared data between different projects and you'll be in for a world of pain.
 
 ### Configuring Your Hosts File
-Add the following entry to your `/etc/hosts` file.
+Add the following entry to your systems `/etc/hosts` file.
 
 ```bash
 127.0.0.1 magento2.test
@@ -69,7 +53,7 @@ docker-compose exec magento2 composer install
 ```
 
 ## Finalizing Magento 2 Installation
-We can now finalize the Magento 2 installation and configure Magento 2 to use the utlities provided by the Mage2Docker environment.
+We can now finalize the Magento 2 installation and configure Magento 2 to use the utilities provided by the Mage2Docker environment.
 
 ```bash
 docker-compose exec magento2 bin/magento setup:install --base-url=https://magento2.test \
