@@ -1,18 +1,19 @@
 # Using Composer locally on Windows
 
-In order to work with Magento 2, you need [composer](https://getcomposer.org).
+**30 Minutes to setup** ~ 2 minutes to read
 
-You can either [install php and then install composer](https://getcomposer.org/doc/00-intro.md#system-requirements) or run with docker as described below.
+In order to work with Magento 2, you will realistically need [composer](https://getcomposer.org). While there are a variety of ways to use composer on Windows:
 
-## Windows Docker
+1. [Windows Subsystem for Linux (WSL) (Preferred)](#installing-composer-with-wsl)
+2. [Docker Images](https://hub.docker.com/_/composer)
+3. [Native php and composer](https://getcomposer.org/doc/00-intro.md#system-requirements)
 
-Installing `php` directly on Windows can be painful and Mage2Docker doesn't require php on your host system, so, you can take advantage of this and run composer through a docker image.
+Because of the complexity involved in setting up PHP natively on windows and the lack of ubiquity of Docker for Windows (many people use Docker Toolbox), WSL is our preferred way to utilize composer on Windows development environments.
 
-### Using Git Bash (Mintty)
+## Installing Composer with WSL
+Getting composer working with WSL can be done in two simple steps:
 
-```bash
-echo 'alias composer="winpty docker run --rm --interactive --tty \
-  --volume "/$(pwd):/app" \
-  composer"' > ~/.bash_profile
-source ~/.bash_profile
-```
+1. [Install WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+    * We prefer to work on the current Ubuntu flavor and all commands within the project reference Ubuntu flavor, but you can choose whatever you would like
+2. [Install composer](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-18-04)
+
