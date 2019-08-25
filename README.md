@@ -5,9 +5,13 @@
 This project intends to create a performant, replicable, and production-like Magento 2 local development environment that leverages Docker.
 
 ## Prerequisites
+* Hardware
+    * 16GB RAM
+    * 4 Cores
 * Docker
     * [MacOS](https://docs.docker.com/docker-for-mac/install)
     * [Windows](https://docs.docker.com/docker-for-windows/install/)
+        * This does NOT support docker toolbox. All docker toolbox issues will be immediately closed.
     * [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 * PHP w/ Composer
     * Windows
