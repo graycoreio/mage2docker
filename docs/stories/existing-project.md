@@ -15,7 +15,7 @@ Setup is broken down into a few discrete steps, follow along and in a few minute
 In the root of your Magento 2 project:
 
 ```bash
-git clone https://www.github.com/graycoreio/mage2docker \ 
+git clone https://www.github.com/graycoreio/mage2docker \
     && echo "mage2docker/" > .gitignore \
     && cd mage2docker
 ```
