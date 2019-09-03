@@ -12,7 +12,12 @@ Setup is broken down into a few discrete steps, follow along and in a few minute
 4. [Taking the Environment Down](#taking-the-environment-down)
 
 ## Setting up the Mage2Docker Project
-In the root of your Magento 2 project:
+
+:warning::warning::warning::warning::warning::warning::warning:
+
+**In the root of your Magento 2 project:**
+
+:warning::warning::warning::warning::warning::warning::warning:
 
 ```bash
 git clone https://www.github.com/graycoreio/mage2docker \
@@ -23,13 +28,22 @@ git clone https://www.github.com/graycoreio/mage2docker \
 > From here on out, we assume that you're working immediately within the new `mage2docker` directory nested inside your project.
 
 ### Configuring Docker Composer
-Mage2Docker comes with a basic environment configuration file `.env.sample`. Copy this file into a new `.env` file.
+Mage2Docker comes with a basic environment configuration file `.env.sample`. 
+
+#### Copy this file into a new `.env` file.**
 
 ```bash
 cp .env.sample .env
 ```
 
-Now, fill out the name of your project in the `COMPOSE_PROJECT_NAME` key. If you have multiple Magento projects on your system, **please ensure that this value is unique**, otherwise you will find out that you've accidentally shared data between different projects and you'll be in for a world of pain.
+You will need to uncomment the following configurations and select the appropriate configurations for you environment. We're configured some basic defaults for out-of-the-box behavior.
+
+```bash
+COMPOSE_PROJECT_NAME
+COMPOSE_FILE
+```
+
+> If you have multiple Magento projects on your system, **please ensure that the COMPOSE_PROJECT_NAME value is unique**, otherwise you will find out that you've accidentally shared data between different projects and you'll be in for a world of pain.
 
 ### Configuring Your Hosts File
 Add the following entry to your systems `/etc/hosts` file.
