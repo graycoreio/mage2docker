@@ -12,5 +12,5 @@ docker volume prune
 ```
 
 ## This time with feeling
-Follow along with the ["getting started"](../getting-started/existing-project.md) to reinstall your environment.
+Now, you can follow along with the ["Existing Project Docs"](./existing-project.md) to setup your environment again.
 
