@@ -7,10 +7,8 @@ Sometimes things go wrong and you have to rebuild your local environment from sc
 ## Delete the docker environment
 
 ```bash
-MAGENTO_2_PROJECT_NAME="your_project_name"
-docker ps -a | grep ${MAGENTO_2_PROJECT_NAME} | awk '{print $1 }' | xargs -I {} docker rm {}
-docker volume ls | grep ${MAGENTO_2_PROJECT_NAME} | awk '{print $2 }' | xargs -I {} docker volume rm {}
-rm app/etc/env.php
+docker-compose down
+docker volume prune
 ```
 
 ## This time with feeling
