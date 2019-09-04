@@ -21,7 +21,7 @@ Setup is broken down into a few discrete steps, follow along and in a few minute
 
 ```bash
 git clone https://www.github.com/graycoreio/mage2docker \
-    && echo "mage2docker/" > .gitignore \
+    && echo "mage2docker/" >> .gitignore \
     && cd mage2docker
 ```
 
