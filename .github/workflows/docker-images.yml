@@ -17,9 +17,9 @@ jobs:
             -t graycore/magento-php:7.2-fpm-alpine-${GITHUB_REF##*/}
             -t graycore/magento-php:7.2-fpm-alpine
       - name: Publish latest image
-        run: docker publish graycore/magento-php:7.2-fpm-alpine
+        run: docker push graycore/magento-php:7.2-fpm-alpine
       - name: Publish tag image
-        run: docker publish graycore/magento-php:7.2-fpm-alpine-${GITHUB_REF##*/}
+        run: docker push graycore/magento-php:7.2-fpm-alpine-${GITHUB_REF##*/}
   build-php-7-2-alpine-develop:
     runs-on: ubuntu-latest
     steps:
@@ -29,9 +29,9 @@ jobs:
           -t graycore/magento-php:7.2-fpm-alpine-develop-${GITHUB_REF##*/}
           -t graycore/magento-php:7.2-fpm-alpine-develop
       - name: Publish latest image
-        run: docker publish graycore/magento-php:7.2-fpm-alpine-develop
+        run: docker push graycore/magento-php:7.2-fpm-alpine-develop
       - name: Publish tag image
-        run: docker publish graycore/magento-php:7.2-fpm-alpine-develop-${GITHUB_REF##*/}
+        run: docker push graycore/magento-php:7.2-fpm-alpine-develop-${GITHUB_REF##*/}
   build-nginx-1-17-alpine-develop:
     runs-on: ubuntu-latest
     steps:
@@ -41,6 +41,6 @@ jobs:
           -t graycore/magento-nginx:1.17-alpine-develop-${GITHUB_REF##*/}
           -t graycore/magento-nginx:1.17-alpine-develop
       - name: Publish latest image
-        run: docker publish graycore/magento-nginx:1.17-alpine-develop
+        run: docker push graycore/magento-nginx:1.17-alpine-develop
       - name: Publish tag image
-        run: docker publish graycore/magento-nginx:1.17-alpine-develop-${GITHUB_REF##*/}
+        run: docker push graycore/magento-nginx:1.17-alpine-develop-${GITHUB_REF##*/}
