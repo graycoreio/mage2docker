@@ -3,10 +3,6 @@ name: Docker Image CI
 on:
   release:
     types: [published]
-  push:
-    branches:
-      - docker_auto_builds
-
 jobs:
   build-php-7-2-alpine:
     runs-on: ubuntu-latest
