@@ -22,6 +22,7 @@ jobs:
       - name: Publish tag image
         run: docker push graycore/magento-php:7.2-fpm-alpine-${GITHUB_REF##*/}
   build-php-7-2-alpine-develop:
+    needs: build-php-7-2-alpine
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
