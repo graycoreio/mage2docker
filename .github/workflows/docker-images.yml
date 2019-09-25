@@ -1,11 +1,8 @@
 name: Docker Image CI
 
 on:
-  # release:
-  #   types: [published]
-  push:
-    branches:
-      - docker_auto_builds
+  release:
+    types: [published]
 
 jobs:
   build-php-7-2-alpine:
@@ -14,8 +11,8 @@ jobs:
       - uses: actions/checkout@v1
       - name: Build the Alpine PHP image
         run: 
-          docker build ./php/7.2/alpine \
-            -t graycore/magento-php:7.2-fpm-alpine-${GITHUB_REF##*/} \
+          docker build ./php/7.2/alpine
+            -t graycore/magento-php:7.2-fpm-alpine-${GITHUB_REF##*/}
             -t graycore/magento-php:7.2-fpm-alpine
   build-php-7-2-alpine-develop:
     runs-on: ubuntu-latest
