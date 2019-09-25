@@ -14,25 +14,6 @@ RUN version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
 
 COPY conf/php.ini /usr/local/etc/php/
 
-ENV MAGENTO_USER=app
-ENV MAGENTO_USER_UID=1000
-ENV MAGENTO_USER_GID=1000
-
-RUN addgroup --gid "$MAGENTO_USER_GID" "$MAGENTO_USER" && adduser \
-    --disabled-password \
-    --gecos "" \
-    --no-create-home \
-    --ingroup "$MAGENTO_USER" \
-    --uid "$MAGENTO_USER_UID" \
-    -h /var/www \
-    -s /bin/bash "$MAGENTO_USER"
-
-RUN mkdir -p /var/www/html && mkdir -p /var/www/html/vendor
-
-RUN chmod 775 /var/www/html && chown root:root /var/www/html && chown app:app /var/www/html/vendor
-
-USER app:app
-
 VOLUME /var/www/html
 
 WORKDIR /var/www/html
