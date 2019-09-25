@@ -19,32 +19,25 @@ This project intends to create a performant, replicable, and production-like Mag
     </a>
     <a href="https://github.com/graycoreop/mage2docker/graphs/commit-activity" target="_blank"><img src="https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg" alt="Maintained - Yes" /></a>
     <a href="https://github.com/graycore/mage2docker/blob/master/LICENSE.md" target="_blank"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License MIT"/></a>
-  <a href="https://gitter.im/graycoreio/mage2docker" target="_blank"><img src="https://img.shields.io/badge/chat-%23mage2docker%20on%20Gitter-brightgreen.svg" alt="chat #mutagen-sync in Slack"/></a>
+  <a href="https://gitter.im/graycoreio/mage2docker" target="_blank"><img src="https://img.shields.io/badge/chat-%23mage2docker%20on%20Gitter-brightgreen.svg" alt="Chat with Mage2Docker on Gitter"/></a>
 
 </div>
 
 ## Prerequisites
 
-- Hardware
-
+* Hardware
   - 16GB RAM
   - 4 Cores
 
-- Docker
-
+* Docker
   - [MacOS](https://docs.docker.com/docker-for-mac/install)
   - [Windows](https://docs.docker.com/docker-for-windows/install/)
-
     - This does NOT support docker toolbox. All docker toolbox issues will be immediately closed.
-
   - [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
-- PHP w/ Composer
-
+* PHP w/ Composer
   - Windows
-
     - [WSL (Windows Subsystem for Linux)](./docs/stories/composer/on-windows.md)
-
   - [MacOS](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos)
 
 ## Features
