@@ -1,6 +1,6 @@
-# Contributing to Daffodil
+# Contributing to Mage2Docker
 
-We would love for you to contribute to Daffodil and help make it even better than it is today! As a contributor, here are the guidelines we would like you to follow:
+We would love for you to contribute to Mage2Docker and help make it even better than it is today! As a contributor, here are the guidelines we would like you to follow:
 
 - [Code of Conduct](#coc)
 - [Question or Problem?](#question)
@@ -12,7 +12,7 @@ We would love for you to contribute to Daffodil and help make it even better tha
 
 ## []() Code of Conduct
 
-Help us keep Daffodil open and inclusive. Please read and follow our [Code of Conduct][coc].
+Help us keep Mage2Docker open and inclusive. Please read and follow our [Code of Conduct][coc].
 
 ## []() Found a Bug?
 
@@ -42,7 +42,7 @@ You can file new issues by filling out our [new issue form][issues].
 Before you submit your Pull Request (PR) consider the following guidelines:
 
 1. Search [GitHub](pulls) for an open or closed PR that relates to your submission. You don't want to duplicate effort.
-2. Fork the graycoreio/daffodil repo.
+2. Fork the graycoreio/Mage2Docker repo.
 3. Make your changes in a new git branch:
 
   ```shell
