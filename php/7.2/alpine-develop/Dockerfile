@@ -27,7 +27,9 @@ RUN addgroup --gid "$MAGENTO_USER_GID" "$MAGENTO_USER" && adduser \
     -h /var/www \
     -s /bin/bash "$MAGENTO_USER"
 
-RUN mkdir -p /var/www/html && chown -R $MAGENTO_USER:$MAGENTO_USER /var/www/html
+RUN mkdir -p /var/www/html && mkdir -p /var/www/html/vendor
+
+RUN chmod 775 /var/www/html && chown root:root /var/www/html && chown app:app /var/www/html/vendor
 
 USER app:app
 

@@ -34,4 +34,6 @@ RUN curl -sS https://getcomposer.org/installer | \
 
 COPY conf/php.ini /usr/local/etc/php/
 
+RUN chmod 775 /var/www/html && chown root:root /var/www/html
+
 WORKDIR /var/www/html
