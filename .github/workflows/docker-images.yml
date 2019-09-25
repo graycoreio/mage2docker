@@ -17,7 +17,7 @@ jobs:
             -t graycore/magento-php:7.2-fpm-alpine-${GITHUB_REF##*/}
             -t graycore/magento-php:7.2-fpm-alpine
       - name: Login to registry
-        run: docker login --username=$DOCKER_USER --password=$DOCKER_PASS
+        run: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - name: Publish latest image
         run: docker push graycore/magento-php:7.2-fpm-alpine
       - name: Publish tag image
@@ -31,7 +31,7 @@ jobs:
           -t graycore/magento-php:7.2-fpm-alpine-develop-${GITHUB_REF##*/}
           -t graycore/magento-php:7.2-fpm-alpine-develop
       - name: Login to registry
-        run: docker login --username=$DOCKER_USER --password=$DOCKER_PASS
+        run: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - name: Publish latest image
         run: docker push graycore/magento-php:7.2-fpm-alpine-develop
       - name: Publish tag image
@@ -45,7 +45,7 @@ jobs:
           -t graycore/magento-nginx:1.17-alpine-develop-${GITHUB_REF##*/}
           -t graycore/magento-nginx:1.17-alpine-develop
       - name: Login to registry
-        run: docker login --username=$DOCKER_USER --password=$DOCKER_PASS
+        run: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - name: Publish latest image
         run: docker push graycore/magento-nginx:1.17-alpine-develop
       - name: Publish tag image
