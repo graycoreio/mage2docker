@@ -2,7 +2,7 @@ version : '3'
 
 services:
   ingress:
-    build: ./nginx/1.17/alpine
+    image: graycore/magento-nginx:1.17-alpine-develop
     ports:
       - "80:8000"
       - "443:8443"
