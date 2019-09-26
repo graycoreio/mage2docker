@@ -8,6 +8,8 @@ services:
       - "443:8443"
     networks:
       - frontend
+    depends_on:
+      - magento2
   magento2:
     image: graycore/magento-php:7.2-fpm-alpine
     restart: always
