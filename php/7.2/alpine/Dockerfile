@@ -27,7 +27,8 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
   pdo_mysql \
   soap \
   xsl \
-  zip
+  zip \
+  sockets
 
 RUN curl -sS https://getcomposer.org/installer | \
   php -- --install-dir=/usr/local/bin --filename=composer
