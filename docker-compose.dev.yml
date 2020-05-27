@@ -13,6 +13,7 @@ services:
       - ../pub:/var/www/html/pub:delegated
       - ../setup:/var/www/html/setup:cached
       - ../update:/var/www/html/update:cached
+      - ../patches:/var/www/html/patches:cached
       - ../index.php:/var/www/html/index.php:cached
       - ../mage2docker-modules:/var/www/html/mage2docker-modules:cached
       - ../nginx.conf.sample:/var/www/html/nginx.conf:cached
