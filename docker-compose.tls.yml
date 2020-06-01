@@ -1,0 +1,7 @@
+version : '3'
+
+services: 
+  ingress:
+    volumes: 
+      - ./nginx/certs/magento2.test.key:/etc/nginx/certs/nginx.key
+      - ./nginx/certs/magento2.test.pem:/etc/nginx/certs/nginx.crt
