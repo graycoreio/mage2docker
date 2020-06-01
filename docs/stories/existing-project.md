@@ -52,6 +52,15 @@ Add the following entry to your systems `/etc/hosts` file.
 127.0.0.1 magento2.test
 ```
 
+### Elasticsearch
+On Linux enviroments (including WSL), you will need to [increase the Virtual Memory available to Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html). You can do so by:
+
+```bash
+sysctl -w vm.max_map_count=262144
+```
+
+> This will not persist upon reboot. To persist this setting, see the above link.
+
 ## Starting the Mage2Docker Environment
 With all the configuration behind us, you can simply:
 
@@ -81,6 +90,9 @@ docker-compose exec magento2 bin/magento setup:config:set --cache-backend=redis 
 docker-compose exec magento2 bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=fullpagecache --page-cache-redis-db=0
 docker-compose exec magento2 bin/magento setup:config:set --session-save=redis --session-save-redis-host=sessioncache --session-save-redis-db=0
 docker-compose exec magento2 bin/magento setup:config:set --amqp-host="message_queue" --amqp-port="5672" --amqp-user="guest" --amqp-password="guest"
+docker-compose exec magento2 bin/magento config:set catalog/search/engine "elasticsearch6" --lock-env
+docker-compose exec magento2 bin/magento config:set catalog/search/elasticsearch6_server_hostname "elasticsearch-master" --lock-env
+docker-compose exec magento2 bin/magento config:set catalog/search/elasticsearch6_index_prefix "magento" --lock-env
 ```
 
 ## Taking the Environment Down

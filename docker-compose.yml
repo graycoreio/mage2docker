@@ -46,7 +46,7 @@ services:
     networks:
       - backend
   elasticsearch:
-    image: elasticsearch:5.6
+    image: elasticsearch:6.8.9
     ports:
       - "9200:9200"
       - "9300:9300"
