@@ -1,0 +1,12 @@
+version : '3'
+
+services: 
+  magento2:
+    image: graycore/magento-php:7.2-fpm-alpine-develop
+    volumes: &appvolumes
+      - ~/.composer:/var/www/.composer:delegated
+      - ../:/var/www/html/:cached
+  ingress:
+    volumes: *appvolumes
+volumes: 
+  appdata:
