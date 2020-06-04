@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/graycoreio/mage2docker/compare/v1.4.0...v2.0.0) (2020-06-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* **release:** We have changed the docker-compose files that are used during the course of local development from prior verisons. As a result, you will need to change you env to the appropriate paths as described in the updated env.
+
+### Features
+
+* **all:** split compose file for full vs. partial sync of M2 files ([18a684f](https://github.com/graycoreio/mage2docker/commit/18a684f39864d4ee3a96c1d61a3b4e7de286bce4))
+* **elasticsearch:** bump elasticsearch version to supported Magento version ([5bbf584](https://github.com/graycoreio/mage2docker/commit/5bbf584044afcc358ad119b7a2bf44d178e7cf55))
+* **magento:** add support for ee patches folder ([6f6ecd4](https://github.com/graycoreio/mage2docker/commit/6f6ecd4036515e47e6a02f59f5e502ef035e56b8))
+* **mysql:** add entrypoint for dropping db dumps to seed an environment ([05c4342](https://github.com/graycoreio/mage2docker/commit/05c434246f790f737b298e180a93100f7e6aa66a))
+* **mysql:** add entrypoint mount to db yml ([357a534](https://github.com/graycoreio/mage2docker/commit/357a53434f2c36b0f5240fd4aa998fa7e749bd51))
+* **mysql:** add entrypoint mount to db yml ([4971f3a](https://github.com/graycoreio/mage2docker/commit/4971f3aa2aae8b7fa093be0190a50421b3f96fb9))
+* **nginx:** add docs and support for adding local TLS certificates ([0b0e027](https://github.com/graycoreio/mage2docker/commit/0b0e0276b81adf5e9b8f6c28ff13d6c63cfc0d02))
+* **nginx:** add nginx v1.18 image ([01ddbde](https://github.com/graycoreio/mage2docker/commit/01ddbdede3cc972ed2b22b11cd7481d4d2ca9b43))
+* **nginx:** add support for picking up wildcard nginx.conf ([e420246](https://github.com/graycoreio/mage2docker/commit/e4202463ed99d45688f6c085bd1d13e70234a327))
+* **release:** log major breaking changes ([546df78](https://github.com/graycoreio/mage2docker/commit/546df78fe79cb6072a7ce17c18cef43e9fd275ab))
+* **sync:** remove unused image settings from yml files ([3d7d358](https://github.com/graycoreio/mage2docker/commit/3d7d358139aeb21c2a9211c3eb4acf7d48b68eef))
+
 ## [1.4.0](https://github.com/graycoreio/mage2docker/compare/v1.3.0...v1.4.0) (2020-02-25)
 
 
