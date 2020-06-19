@@ -3,3 +3,5 @@
 
 node_modules/
 nginx/certs
+
+compose/custom/*.yml

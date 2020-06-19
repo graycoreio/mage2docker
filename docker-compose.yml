@@ -11,7 +11,7 @@ services:
     depends_on:
       - magento2
   magento2:
-    image: graycore/magento-php:7.2-fpm-alpine
+    image: graycore/magento-php:7.2-fpm-alpine-develop
     restart: always
     networks:
       - frontend
