@@ -4,7 +4,7 @@ Mage2Docker creates a local MySQL database for you to work with. On top of built
 
 ## Persistence
 
-The database of the local environment is persistent. This means that the environment will continue to exist after reboots as well as `docker-compose down`.
+The database of the local environment is persistent. This means that the data which backs the environment will continue to exist after reboots as well as `docker-compose down`.
 
 ## Deleting the volume
 

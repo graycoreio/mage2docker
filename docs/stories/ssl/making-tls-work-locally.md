@@ -1,6 +1,6 @@
 # TLS Certificates
 
-When working locally, its important to consider the end-user of your software. To mimic this as closely as possible, you will need to setup a local TLS certificate. Luckily, doing so is pretty easy with [mkcert](https://github.com/FiloSottile/mkcert).
+When working locally, its important to consider the end-user of your software. To mimic this as closely as possible, you often need to setup a local TLS certificate. Luckily, doing so is pretty easy with [mkcert](https://github.com/FiloSottile/mkcert).
 
 ## Getting Started
 To begin, start by [installing on your system](https://github.com/FiloSottile/mkcert#installation).
@@ -19,10 +19,10 @@ mv magento2.test.key nginx/certs/magento2.test.key && mv magento2.test.pem nginx
 ```
 
 ## Enabling Local Cert Mounting with Mage2Docker
-Now, simply append the `docker-compose.TLS.yml` path to your `.env` file and bring your containers up `docker-compose up`.
+Now, simply append the `docker-compose.tls.yml` path to your `.env` file and bring your containers up `docker-compose up`.
 
 ```
-COMPOSE_FILE=docker-compose.yml:...:docker-compose.TLS.yml
+COMPOSE_FILE=docker-compose.yml:...:docker-compose.tls.yml
 ```
 
 At this point, you should have a working TLS cert covering the `magento2.test` domain! 
