@@ -21,14 +21,14 @@ Setup is broken down into a few discrete steps, follow along and in a few minute
 
 ```bash
 git clone https://www.github.com/graycoreio/mage2docker \
-    && echo "mage2docker/" >> .gitignore \
+    && echo -e "\nmage2docker/" >> .gitignore \
     && cd mage2docker
 ```
 
 > From here on out, we assume that you're working immediately within the new `mage2docker` directory nested inside your project.
 
 ### Configuring Docker Composer
-Mage2Docker comes with a basic environment configuration file `.env.sample`. 
+Mage2Docker comes with a basic environment configuration file `.env.sample`, you can utilize this file to tailor your environment to your needs. 
 
 #### Copy this file into a new `.env` file.**
 
@@ -59,7 +59,7 @@ On Linux enviroments (including WSL), you will need to [increase the Virtual Mem
 sysctl -w vm.max_map_count=262144
 ```
 
-> This will not persist upon reboot. To persist this setting, see the above link.
+> This setting will not persist upon reboot. To persist this setting, see the above link.
 
 ## Starting the Mage2Docker Environment
 With all the configuration behind us, you can simply:
@@ -91,7 +91,7 @@ docker-compose exec magento2 bin/magento setup:config:set --page-cache=redis --p
 docker-compose exec magento2 bin/magento setup:config:set --session-save=redis --session-save-redis-host=sessioncache --session-save-redis-db=0
 docker-compose exec magento2 bin/magento setup:config:set --amqp-host="message_queue" --amqp-port="5672" --amqp-user="guest" --amqp-password="guest"
 docker-compose exec magento2 bin/magento config:set catalog/search/engine "elasticsearch6" --lock-env
-docker-compose exec magento2 bin/magento config:set catalog/search/elasticsearch6_server_hostname "elasticsearch-master" --lock-env
+docker-compose exec magento2 bin/magento config:set catalog/search/elasticsearch6_server_hostname "elasticsearch" --lock-env
 docker-compose exec magento2 bin/magento config:set catalog/search/elasticsearch6_index_prefix "magento" --lock-env
 ```
 

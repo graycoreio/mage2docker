@@ -33,20 +33,22 @@ This project intends to create a performant, replicable, and production-like Mag
 </div>
 
 ## Prerequisites
+
 #### Hardware
 * 16GB RAM
 * 4 Cores
 
+#### Platform Specific Requirements
+* [Windows via WSL2](./docs/platforms/windows.md)
+* [MacOS](./docs/platforms/macos.md)
+* [Linux - Ubuntu](./docs/platforms/ubuntu.md)
+
 #### Docker
 * [MacOS](https://docs.docker.com/docker-for-mac/install)
 * [Windows](https://docs.docker.com/docker-for-windows/install/)
-  * This project does NOT support docker toolbox. All docker toolbox issues will be immediately closed.
-* [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-
-#### PHP w/ Composer
-* Windows
-  * [WSL (Windows Subsystem for Linux)](./docs/stories/composer/on-windows.md)
-* [MacOS](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos)
+  * [WSL2 Backend](https://docs.docker.com/docker-for-windows/wsl/)
+  * This project does NOT support docker toolbox. 
+* [Linux - Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
 ## Features
 
@@ -54,6 +56,8 @@ This project intends to create a performant, replicable, and production-like Mag
 * :fire: Fast (~250ms Out-of-the-box)
 * :evergreen_tree: Alpine Linux
 * :lock: Local SSL Certificates
+* Magento 2 Open Source & Commerce (Not Cloud) Support
+  * If you're using cloud, please use the ["Cloud Docker" project created by Adobe](https://devdocs.magento.com/cloud/docker/docker-config.html)
 
 ## Use Cases (User Stories)
 

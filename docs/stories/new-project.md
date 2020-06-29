@@ -1,29 +1,16 @@
 # Getting Started with a new Magento Application
-There are a steps involved in preparing your local development environment for Magento 2 development.
+There are a few steps involved in preparing your local development environment for Magento 2 development.
 
-1. [Setting up composer](#setting-up-composer)
-2. [Setting up your Magento Account](#setting-up-your-magento-account)
-3. [Configuring Composer](#configuring-composer)
-4. [Creating your Magento 2 Project](#creating-your-magento-2-project)
+1. [Setting up your Magento Account](#setting-up-your-magento-account)
+2. [Configuring Composer](#configuring-composer)
+3. [Creating your Magento 2 Project](#creating-your-magento-2-project)
 4. [Setting up Mage2Docker](#setting-up-mage2docker)
-
-## Setting up composer
-Magento 2 utilizes composer to manage its dependencies, including itself. To realistically work with Magento, you will need composer. How you install composer is up to you, but we've provided some basic documentation on how to do this on "cleanly" on a few platforms.
-
-> If you already have composer installed, you can skip to [Setting up your Magento account](#setting-up-your-magento-account).
-
-1. Windows
-    * [Installing PHP & Composer through WSL (Preferred)](./composer/on-windows.md)
-    * [Installing Composer Natively](https://getcomposer.org/doc/00-intro.md#installation-windows)
-2. [MacOS]
-    * [Installing PHP and Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos)
 
 ## Setting up your Magento Account
 [The process of creating a Magento account is fully documented by Magento and you should follow their process](https://docs.magento.com/m2/ce/user_guide/magento/magento-account-create.html). 
 
 ## Configuring Composer
-
-In case you have not done so, we will add your Magento composer authentication credentials to your local `auth.json`.
+In case you have not done so, we will add your Magento composer authentication credentials to your user's local `auth.json`.
 
 First check to see if you have a credentials file under `~/.composer/auth.json`.
 
@@ -39,8 +26,23 @@ If you don't see your credentials there, [you can follow the Magento 2 guide to 
 cp /path/to/magento/project/auth.json.sample ~/.composer/auth.json
 ``` 
 
+### Per-project configuration
+We recommend using `auth.json` in your user's directory, but when you're working on multiple Magento 2 applications at once, you may need multiple `auth.json`. You can simply add the `auth.json` to the root of your Magento 2 project, and composer will use those credentials instead.
+
 ## Creating your Magento 2 Project
-[We recommend creating your Magento 2 project with composer.](https://devdocs.magento.com/guides/v2.3/install-gde/composer.html)
+[We recommend creating your Magento 2 project with composer.](https://devdocs.magento.com/guides/v2.3/install-gde/composer.html).
+
+To create in a specific directory
+```bash
+composer create-project --ignore-platform-reqs --repository-url=https://repo.magento.com/ magento/project-community-edition <install-directory-name> 
+```
+
+To create in the current directory
+```bash
+composer create-project --ignore-platform-reqs --repository-url=https://repo.magento.com/ magento/project-community-edition .
+```
+
+> Do note that since you're running this command in an environment that may have a different php version than the actual systems that Mage2Docker uses for your Magento 2 application, you can safely add the `--ignore-platform-reqs` flag if composer complains of incorrect PHP versions or missing PHP extensions.
 
 ## Setting up Mage2Docker.
 Now that you have a local Magento 2 project, you can follow along with the [existing project setup](./existing-project.md).
