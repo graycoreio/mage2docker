@@ -12,6 +12,9 @@ RUN version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
     && printf "extension=blackfire.so\nblackfire.agent_socket=tcp://blackfire:8707\n" > $PHP_INI_DIR/conf.d/blackfire.ini \
     && rm -rf /tmp/blackfire /tmp/blackfire-probe.tar.gz
 
+RUN apk add --no-cache \
+  patch
+
 COPY conf/php.ini /usr/local/etc/php/
 
 ENV MAGENTO_USER=app
