@@ -1,10 +1,10 @@
 # Getting Started with an existing Magento application
 
-We've designed Mage2Docker to be as simple as possible to use with an existing project.
+We've designed Mage2Docker to be as simple as possible to use with an existing Magento 2 Open Source or Magento 2 Commerce project.
 
 > This setup assumes that you have already setup your Magento account, composer, and your Magento composer credentials. If you have not done this, see the [new project setup](./new-project.md).
 
-Setup is broken down into a few discrete steps, follow along and in a few minutes you will have a working Magento 2 project.
+Setup is broken down into a few discrete steps, follow along and in a few minutes you will have a working local Magento 2 project.
 
 1. [Setting up the Mage2Docker environment](#setting-up-the-mage2docker-environment)
 2. [Installing the Magento 2 Dependencies](#installing-the-magento-2-dependencies)
@@ -13,11 +13,7 @@ Setup is broken down into a few discrete steps, follow along and in a few minute
 
 ## Setting up the Mage2Docker Project
 
-:warning::warning::warning::warning::warning::warning::warning:
-
-**In the root of your Magento 2 project:**
-
-:warning::warning::warning::warning::warning::warning::warning:
+:no_entry: **In the root of your Magento 2 project:**
 
 ```bash
 git clone https://www.github.com/graycoreio/mage2docker \
@@ -36,12 +32,14 @@ Mage2Docker comes with a basic environment configuration file `.env.sample`, you
 cp .env.sample .env
 ```
 
-You will need to uncomment the following configurations and select the appropriate configurations for you environment. We're configured some basic defaults for out-of-the-box behavior.
+You will need to uncomment the following configurations and select the [appropriate configurations](./configuring.md) for your environment. We've configured some basic defaults for out-of-the-box behavior.
 
 ```bash
 COMPOSE_PROJECT_NAME
 COMPOSE_FILE
 ```
+
+For further configuration [see the configuration guide](./configuring.md).
 
 > If you have multiple Magento projects on your system, **please ensure that the COMPOSE_PROJECT_NAME value is unique**, otherwise you will find out that you've accidentally shared data between different projects and you'll be in for a world of pain.
 
@@ -65,11 +63,13 @@ sysctl -w vm.max_map_count=262144
 With all the configuration behind us, you can simply:
 
 ```bash
-docker-compose up
+docker-compose up -d
 ```
 
+> Note that the `-d` detaches from the container logstream so that you can continue to use the same terminal. You can remove it if you'd like to see the logs for all the containers.
+
 ## Installing the Magento 2 Dependencies
-For performance reasons, we do NOT share the `vendor` directory between your host system and the docker environment. Instead, you can run `composer` commands directly on the container to install the Magento 2 dependencies.
+You can run `composer` commands directly on the container to install the Magento 2 dependencies.
 
 ```bash
 docker-compose exec magento2 composer install

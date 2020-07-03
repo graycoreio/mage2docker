@@ -2,7 +2,7 @@
 
 > Get rid of your "it works on my machine" arguments.
 
-This project intends to create a performant, replicable, and production-like Magento 2 local development environment that leverages Docker.
+This project intends to create an opinionated, performant, replicable, and production-like Magento 2 local development environment that leverages Docker.
 
 <div align="center">
     <a href="https://hub.docker.com/r/graycore/magento-php" target="_blank">
@@ -38,11 +38,6 @@ This project intends to create a performant, replicable, and production-like Mag
 * 16GB RAM
 * 4 Cores
 
-#### Platform Specific Requirements
-* [Windows via WSL2](./docs/platforms/windows.md)
-* [MacOS](./docs/platforms/macos.md)
-* [Linux - Ubuntu](./docs/platforms/ubuntu.md)
-
 #### Docker
 * [MacOS](https://docs.docker.com/docker-for-mac/install)
 * [Windows](https://docs.docker.com/docker-for-windows/install/)
@@ -50,20 +45,18 @@ This project intends to create a performant, replicable, and production-like Mag
   * This project does NOT support docker toolbox. 
 * [Linux - Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
+#### Supported Platforms
+* [Windows via WSL2](./docs/platforms/windows.md)
+* [MacOS](./docs/platforms/macos.md)
+* [Linux - Ubuntu](./docs/platforms/ubuntu.md)
+
 ## Features
 
-* :clock1: **5 Minute** Setup
-* :fire: Fast (~250ms Out-of-the-box)
+* :clock1: [**5 Minute** Setup](,/docs/)
+* :fire: Fast (~250ms Response Times Out-of-the-box)
 * :evergreen_tree: Alpine Linux
-* :lock: Local SSL Certificates
+* :grin: [Semver Compliant](https://semver.org/)
+* :lock: [Local TLS Certificates](./docs/stories/ssl/making-tls-work-locally.md)
+* :gear: [Infinitely Configurable](./docs/stories/configuring.md)
 * Magento 2 Open Source & Commerce (Not Cloud) Support
   * If you're using cloud, please use the ["Cloud Docker" project created by Adobe](https://devdocs.magento.com/cloud/docker/docker-config.html)
-
-## Use Cases (User Stories)
-
-We intend to support the following common use cases:
-
-* [Working with an existing Magento 2 Project](./docs/stories/existing-project.md)
-* [Starting a new Magento 2 Project](./docs/stories/new-project.md)
-* [Complete Teardown and Reinstall](./docs/stories/reinstalling.md)
-* [Adding Local SSL Certificates](./docs/stories/ssl/making-tls-work-locally.md)
