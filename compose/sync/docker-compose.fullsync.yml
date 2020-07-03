@@ -7,5 +7,3 @@ services:
       - ../:/var/www/html/:cached
   ingress:
     volumes: *appvolumes
-volumes: 
-  appdata:
