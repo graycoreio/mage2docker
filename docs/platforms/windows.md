@@ -8,7 +8,7 @@ The [instructions for installing WSL2](https://docs.microsoft.com/en-us/windows/
 > We tend to prefer Ubuntu LTS (as of writing this is 20.04), but if you have a preferred flavor, you can use that too.
 
 ### Connect to the Ubuntu VM
-You can use whatever preferred terminal to connect to the Ubuntu VM, but the native `bash` that comes with `WSL` is quite useful. 
+You can use whatever preferred terminal to connect to the Ubuntu VM, but the native `bash` that comes with `WSL` is gernerally sufficient. 
 
 > :warning: *The tutorials from this point onwards assume that you're running terminal commands on Ubuntu and working with files on the WSL2 instance, NOT on your Windows filesystem.*
 
