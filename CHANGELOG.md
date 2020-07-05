@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/graycoreio/mage2docker/compare/v2.0.0...v3.0.0) (2020-07-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* **all:** dependents will have to update their env files to the new path
+
+### Features
+
+* **all:** move yaml files into a compose directory split by intended behavior ([875b8c0](https://github.com/graycoreio/mage2docker/commit/875b8c026bd6206d40efaf1d3bc2e6575b0819c6))
+* **magento:** use develop image when using local sync ([cb18ae1](https://github.com/graycoreio/mage2docker/commit/cb18ae1fd30a43dbf1ddcb0fb16fad41fcc6fb71))
+* **nginx:** bump docker-compose nginx version to v1.18 ([d9f6353](https://github.com/graycoreio/mage2docker/commit/d9f6353e918c2657d5f6d66364a89549f8a0ba52))
+* **php:** add GNU patch to alpine develop image for applying patches ([273ad23](https://github.com/graycoreio/mage2docker/commit/273ad2326a36444c1d2d21a6b25a0332e64b5737))
+* **sync:** remove useless volume from fullsync ([36299e7](https://github.com/graycoreio/mage2docker/commit/36299e7154bdf194bb9ba60bf7478aa4c89751fe))
+
+
+### Bug Fixes
+
+* **env:** fix a env split between windows and linux ([821dbf5](https://github.com/graycoreio/mage2docker/commit/821dbf516f8252296759ac83c610c44e9a8315f2))
+
 ## [2.0.0](https://github.com/graycoreio/mage2docker/compare/v1.4.0...v2.0.0) (2020-06-04)
 
 
