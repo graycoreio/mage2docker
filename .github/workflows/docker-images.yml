@@ -3,73 +3,73 @@ name: Docker Image CI
 on:
   release:
     types: [published]
+  pull_request:
+    branches:
+      - master
 jobs:
-  build-php-7-2-alpine:
+  build-php:
+    strategy:
+      matrix:
+        php: [7.2, 7.3, 7.4]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the graycore/magento-php:${{ matrix.php }}-fpm-alpine image
+      run: docker build ./php/${{ matrix.php }}/alpine
+          -t graycore/magento-php:${{ matrix.php }}-fpm-alpine-${GITHUB_REF##*/}
+          -t graycore/magento-php:${{ matrix.php }}-fpm-alpine
+    
+    - name: Build the graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop image
+      run: docker build ./php/${{ matrix.php }}/alpine-develop
+        -t graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-${GITHUB_REF##*/}
+        -t graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop
+    
+    - name: Login to registry
+      run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      if: ${{ github.event_name == 'release' }}
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}
+        DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
+    
+    - name: Publish latest graycore/magento-php:${{ matrix.php }}-fpm-alpine image
+      if: ${{ github.event_name == 'release' }}
+      run: docker push graycore/magento-php:${{ matrix.php }}-fpm-alpine
+
+    - name: Publish tag graycore/magento-php:${{ matrix.php }}-fpm-alpine-${GITHUB_REF##*/} image
+      if: ${{ github.event_name == 'release' }}
+      run: docker push graycore/magento-php:${{ matrix.php }}-fpm-alpine-${GITHUB_REF##*/}
+    
+    - name: Publish latest graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop image
+      if: ${{ github.event_name == 'release' }} 
+      run: docker push graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop
+
+    - name: Publish tag graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-${GITHUB_REF##*/} image
+      if: ${{ github.event_name == 'release' }}
+      run: docker push graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-${GITHUB_REF##*/}
+  
+  build-nginx:
+    strategy:
+      matrix:
+        nginx: [1.17, 1.18]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Build the Alpine PHP image
-        run: docker build ./php/7.2/alpine
-            -t graycore/magento-php:7.2-fpm-alpine-${GITHUB_REF##*/}
-            -t graycore/magento-php:7.2-fpm-alpine
+      - name: Build the graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop image
+        run: docker build ./nginx/${{ matrix.nginx }}/alpine-develop
+          -t graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop-${GITHUB_REF##*/}
+          -t graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop
+      
       - name: Login to registry
+        if: ${{ github.event_name == 'release' }}
         run: docker login -u $DOCKER_USER -p $DOCKER_PASS
         env:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
-      - name: Publish latest image
-        run: docker push graycore/magento-php:7.2-fpm-alpine
-      - name: Publish tag image
-        run: docker push graycore/magento-php:7.2-fpm-alpine-${GITHUB_REF##*/}
-  build-php-7-2-alpine-develop:
-    needs: build-php-7-2-alpine
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Build the Alpine Develop PHP image
-        run: docker build ./php/7.2/alpine-develop
-          -t graycore/magento-php:7.2-fpm-alpine-develop-${GITHUB_REF##*/}
-          -t graycore/magento-php:7.2-fpm-alpine-develop
-      - name: Login to registry
-        run: docker login -u $DOCKER_USER -p $DOCKER_PASS
-        env:
-          DOCKER_USER: ${{ secrets.DOCKER_USER }}
-          DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
-      - name: Publish latest image
-        run: docker push graycore/magento-php:7.2-fpm-alpine-develop
-      - name: Publish tag image
-        run: docker push graycore/magento-php:7.2-fpm-alpine-develop-${GITHUB_REF##*/}
-  build-nginx-1-17-alpine-develop:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Build the Alpine Develop Nginx image
-        run: docker build ./nginx/1.17/alpine-develop
-          -t graycore/magento-nginx:1.17-alpine-develop-${GITHUB_REF##*/}
-          -t graycore/magento-nginx:1.17-alpine-develop
-      - name: Login to registry
-        run: docker login -u $DOCKER_USER -p $DOCKER_PASS
-        env:
-          DOCKER_USER: ${{ secrets.DOCKER_USER }}
-          DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
-      - name: Publish latest image
-        run: docker push graycore/magento-nginx:1.17-alpine-develop
-      - name: Publish tag image
-        run: docker push graycore/magento-nginx:1.17-alpine-develop-${GITHUB_REF##*/}
-  build-nginx-1-18-alpine-develop:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Build the Alpine Develop Nginx image
-        run: docker build ./nginx/1.18/alpine-develop
-          -t graycore/magento-nginx:1.18-alpine-develop-${GITHUB_REF##*/}
-          -t graycore/magento-nginx:1.18-alpine-develop
-      - name: Login to registry
-        run: docker login -u $DOCKER_USER -p $DOCKER_PASS
-        env:
-          DOCKER_USER: ${{ secrets.DOCKER_USER }}
-          DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
-      - name: Publish latest image
-        run: docker push graycore/magento-nginx:1.18-alpine-develop
-      - name: Publish tag image
-        run: docker push graycore/magento-nginx:1.18-alpine-develop-${GITHUB_REF##*/}
+      
+      - name: Publish graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop image
+        if: ${{ github.event_name == 'release' }}
+        run: docker push graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop
+      
+      - name: Publish graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop-${GITHUB_REF##*/} image
+        if: ${{ github.event_name == 'release' }}
+        run: docker push graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop-${GITHUB_REF##*/}
