@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/graycoreio/mage2docker/compare/v3.0.0...v3.1.0) (2020-08-09)
+
+
+### Features
+
+* **php:** add php 7.3 docker image ([#7](https://github.com/graycoreio/mage2docker/issues/7)) ([c961f95](https://github.com/graycoreio/mage2docker/commit/c961f9501850d649f83bc36fa053f67e754b6906))
+* **php:** add php 7.4 image ([#7](https://github.com/graycoreio/mage2docker/issues/7)) ([5b8feea](https://github.com/graycoreio/mage2docker/commit/5b8feea603ab90f0a38d5b61e5217fd414236a92))
+
 ## [3.0.0](https://github.com/graycoreio/mage2docker/compare/v2.0.0...v3.0.0) (2020-07-05)
 
 
