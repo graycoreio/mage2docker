@@ -22,7 +22,7 @@ mkdir -p nginx/certs && mv magento2.test.key nginx/certs/magento2.test.key && mv
 Now, simply append the `docker-compose.tls.yml` path to your `.env` file and bring your containers up `docker-compose up`.
 
 ```
-COMPOSE_FILE=docker-compose.yml:...:path/to/docker-compose.tls.yml
+COMPOSE_FILE=docker-compose.yml:...:compose/tls/docker-compose.tls.yml
 ```
 
 At this point, you should have a working TLS cert covering the `magento2.test` domain! 
