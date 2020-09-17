@@ -1,6 +1,11 @@
 version : '3'
 
 services:
+    magento2:
+        environment:
+        - CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH7_SERVER_HOSTNAME=elasticsearch
+        - CONFIG__DEFAULT__CATALOG__SEARCH__ENGINE=elasticsearch7
+        - CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH7_SERVER_PORT=9200
     elasticsearch:
         image: elasticsearch:7.6.2
         environment:
