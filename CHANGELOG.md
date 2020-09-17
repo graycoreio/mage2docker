@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0](https://github.com/graycoreio/mage2docker/compare/v3.1.0...v3.2.0) (2020-09-17)
+
+
+### Features
+
+* **docker:** adds support for Magento v2.4 requirements ([2eb646d](https://github.com/graycoreio/mage2docker/commit/2eb646d2e801ff1dbd723cf306ff407e811356b8))
+* **elasticsearch:** embed Magento v2.4 configuration into Elasticsearch 7.6 behavior ([ae56670](https://github.com/graycoreio/mage2docker/commit/ae566704d4315ae5165dcce662d3ff1648b346ab))
+* **elasticsearch:** set discovery.type to single node ([6a90790](https://github.com/graycoreio/mage2docker/commit/6a9079002cbe9aa74cd10ce0b2354b4eace64df7))
+* **php:** add default opcache settings for Magento 2 ([4ec4e04](https://github.com/graycoreio/mage2docker/commit/4ec4e04c5c7f750d2b4377bfac8db013fe283cd5))
+
+
+### Bug Fixes
+
+* **docker:** fix a bad file path to elasticsearch compose ([6b7f93f](https://github.com/graycoreio/mage2docker/commit/6b7f93f5bd96fb724fa87e0566de3dc90c31cca7))
+
 ## [3.1.0](https://github.com/graycoreio/mage2docker/compare/v3.0.0...v3.1.0) (2020-08-09)
 
 
