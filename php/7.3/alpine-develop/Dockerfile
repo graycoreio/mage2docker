@@ -15,6 +15,8 @@ RUN version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
 RUN apk add --no-cache \
   patch
 
+RUN docker-php-ext-install xdebug
+
 COPY conf/php.ini /usr/local/etc/php/
 
 ENV MAGENTO_USER=app
