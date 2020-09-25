@@ -4,33 +4,22 @@
 
 This project intends to create an opinionated, performant, replicable, and production-like Magento 2 local development environment that leverages Docker.
 
-<div align="center">
-    <a href="https://hub.docker.com/r/graycore/magento-php" target="_blank">
-    <img src="https://img.shields.io/docker/pulls/graycore/magento-php.svg?label=magento-php%20docker%20pulls" 
-    alt="Docker Hub Pulls - Magento php">
-    </a>
-    <a href="https://hub.docker.com/r/graycore/magento-nginx/" target="_blank">
-    <img src="https://img.shields.io/docker/pulls/graycore/magento-nginx.svg?label=nginx%20docker%20pulls" 
-    alt="Docker Hub Pulls - Nginx">
-    </a>
-    <a href="https://github.com/graycoreop/mage2docker/graphs/commit-activity" target="_blank"><img src="https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg" alt="Maintained - Yes" /></a>
-    <a href="https://github.com/graycore/mage2docker/blob/master/LICENSE.md" target="_blank"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License MIT"/></a>
-  <a href="https://gitter.im/graycoreio/mage2docker" target="_blank"><img src="https://img.shields.io/badge/chat-%23mage2docker%20on%20Gitter-brightgreen.svg" alt="Chat with Mage2Docker on Gitter"/></a>
-</div>
-<div align="center">
-  <a href="https://github.com/magento/magento2" target="_blank">
-      <img src="https://img.shields.io/badge/magento-2.X-brightgreen.svg?logo=magento&amp;longCache=true" 
-    alt="Supported Magento Versions">
-    </a>
-   <a href="https://github.com/magento/magento2" target="_blank">
-      <img src="https://img.shields.io/badge/magento-commerce-brightgreen.svg?logo=magento&amp;longCache=true" 
-    alt="Supports Magento Commerce">
-    </a>
-    <a href="https://github.com/magento/magento2" target="_blank">
-      <img src="https://img.shields.io/badge/magento-opensource-brightgreen.svg?logo=magento&amp;longCache=true" 
-    alt="Supports Magento Open Source">
-    </a>
-</div>
+![https://hub.docker.com/r/graycore/magento-php](https://img.shields.io/docker/pulls/graycore/magento-php.svg?label=magento-php%20docker%20pulls)
+![https://github.com/graycoreop/mage2docker/graphs/commit-activity](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg)
+![https://github.com/graycore/mage2docker/blob/master/LICENSE.md](https://img.shields.io/badge/license-MIT-blue.svg)
+![https://gitter.im/graycoreio/mage2docker](https://img.shields.io/badge/chat-%23mage2docker%20on%20Gitter-brightgreen.svg)
+
+## Magento Version Support
+![Magento Commerce Supported](https://img.shields.io/badge/Magento-Commerce-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)
+![Magento Opensource Supported](https://img.shields.io/badge/Magento-Opensource-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)
+
+![Magento v2.3 Supported](https://img.shields.io/badge/Magento-2.3-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)
+![Magento v2.4 Supported](https://img.shields.io/badge/Magento-2.4-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)
+
+## Supported Platforms
+* [Windows via WSL2](./docs/platforms/windows.md)
+* [MacOS](./docs/platforms/macos.md)
+* [Linux - Ubuntu](./docs/platforms/ubuntu.md)
 
 ## Prerequisites
 
@@ -38,21 +27,9 @@ This project intends to create an opinionated, performant, replicable, and produ
 * 16GB RAM
 * 4 Cores
 
-#### Docker
-* [MacOS](https://docs.docker.com/docker-for-mac/install)
-* [Windows](https://docs.docker.com/docker-for-windows/install/)
-  * [WSL2 Backend](https://docs.docker.com/docker-for-windows/wsl/)
-  * This project does NOT support docker toolbox. 
-* [Linux - Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-
-#### Supported Platforms
-* [Windows via WSL2](./docs/platforms/windows.md)
-* [MacOS](./docs/platforms/macos.md)
-* [Linux - Ubuntu](./docs/platforms/ubuntu.md)
-
 ## Features
 
-* :clock1: [**5 Minute** Setup](,/docs/)
+* :clock1: [**5 Minute** Setup](#supported-platforms)
 * :fire: Fast (~250ms Response Times Out-of-the-box)
 * :evergreen_tree: Alpine Linux
 * :grin: [Semver Compliant](https://semver.org/)

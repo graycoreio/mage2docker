@@ -1,21 +1,33 @@
-# Windows Prerequisites
+# Windows 
 
-Mage2Docker has full compatability with Windows 10, but will require some configuration in order to have the best possible DevX. Specifically, in order to have a local Magento 2 environment that performs well and is easy to develop in, we will need to take advantage of the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about). Specifically, we must use WSL2, as it is significantly faster for our purposes than the original WSL.
+Mage2Docker has full compatability with Windows 10, but will require some configuration in order to have the best possible DevX. Specifically, in order to have a local Magento 2 environment that performs well and is easy to develop in, we **need** to take advantage of the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about). Specifically, we must use WSL2, as it is significantly faster for our purposes than the original WSL.
+
+## Prerequisites
+* [Installing Docker](./#installing-docker)
+* [Installing WSL2](./#installing-wsl2)
+* [Installing PHP and Composer on WSL2](./#installing-php-and-composer)
+
+### Installing Docker
+The [Docker for WSL2 backend](https://docs.docker.com/docker-for-windows/wsl/) is the only backend for Docker for Windows that we plan on supporting. 
+
+> If you already use docker without WSL2 do note that since the backend is different, containers pulled (and running) with the Windows will be different than containers pulled with the WSL2 backend.
 
 ### Installing WSL2
 The [instructions for installing WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10) are on Microsoft's docs and you can follow along there.
 
 > We tend to prefer Ubuntu LTS (as of writing this is 20.04), but if you have a preferred flavor, you can use that too.
 
-### Connect to the Ubuntu VM
+#### Connect to the Ubuntu VM
 You can use whatever preferred terminal to connect to the Ubuntu VM, but the native `bash` that comes with `WSL` is gernerally sufficient. 
 
 > :warning: *The tutorials from this point onwards assume that you're running terminal commands on Ubuntu and working with files on the WSL2 instance, NOT on your Windows filesystem.*
 
-### Install PHP & Composer
-We'll need [PHP and composer to work with Magento day-to-day.](https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md) Just ensure that you've installed composer on the WSL2 instance, not on your Windows host.
+### Installing PHP and Composer
+We'll need [PHP and composer to work with Magento day-to-day.](https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md).
 
-### Fin
+> Ensure that you've installed both PHP and composer on the WSL2 instance, not on your Windows host.
+
+## Fin
 At this point, you're done with specific Windows setup and you can continue along with setting up your Magento 2 project.
 
 * [Creating a Magento 2 project for the first time](/docs/stories/new-project.md)
