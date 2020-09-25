@@ -4,17 +4,19 @@
 
 This project intends to create an opinionated, performant, replicable, and production-like Magento 2 local development environment that leverages Docker.
 
-![https://hub.docker.com/r/graycore/magento-php](https://img.shields.io/docker/pulls/graycore/magento-php.svg?label=magento-php%20docker%20pulls)
-![https://github.com/graycoreop/mage2docker/graphs/commit-activity](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg)
-![https://github.com/graycore/mage2docker/blob/master/LICENSE.md](https://img.shields.io/badge/license-MIT-blue.svg)
-![https://gitter.im/graycoreio/mage2docker](https://img.shields.io/badge/chat-%23mage2docker%20on%20Gitter-brightgreen.svg)
-
+[![graycore/magento2-php pulls](https://img.shields.io/docker/pulls/graycore/magento-php.svg?label=magento-php%20docker%20pulls)](https://hub.docker.com/r/graycore/magento-php)
+[![Mage2Docker Commit Activity](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg)](https://github.com/graycoreop/mage2docker/graphs/commit-activity)
+[![Mage2Docker MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/graycore/mage2docker/blob/master/LICENSE.md)
+[![Mage2Docker Gitter Chat](https://img.shields.io/badge/chat-%23mage2docker%20on%20Gitter-brightgreen.svg)](https://gitter.im/graycoreio/mage2docker)
 ## Magento Version Support
-![Magento Commerce Supported](https://img.shields.io/badge/Magento-Commerce-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)
-![Magento Opensource Supported](https://img.shields.io/badge/Magento-Opensource-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)
+[![Magento Commerce Supported](https://img.shields.io/badge/Magento-Commerce-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)](https://magento.com/)
+[![Magento Opensource Supported](https://img.shields.io/badge/Magento-Opensource-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)](https://magento.com/)
 
-![Magento v2.3 Supported](https://img.shields.io/badge/Magento-2.3-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)
-![Magento v2.4 Supported](https://img.shields.io/badge/Magento-2.4-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)
+[![Magento v2.3 Supported](https://img.shields.io/badge/Magento-2.3-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)](https://magento.com/)
+[![Magento v2.4 Supported](https://img.shields.io/badge/Magento-2.4-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)](https://magento.com/)
+
+## Getting Started
+To get started, pick your operating system from the list below. Don't see yours? [Make an issue.](https://github.com/graycoreio/mage2docker/issues/new?assignees=damienwebdev&labels=feat&template=feature_request.md&title=%5BFEAT%5D)
 
 ## Supported Platforms
 * [Windows via WSL2](./docs/platforms/windows.md)
