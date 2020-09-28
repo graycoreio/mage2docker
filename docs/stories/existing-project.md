@@ -44,7 +44,9 @@ For further configuration [see the configuration guide](./configuring.md).
 > If you have multiple Magento projects on your system, **please ensure that the COMPOSE_PROJECT_NAME value is unique**, otherwise you will find out that you've accidentally shared data between different projects and you'll be in for a world of pain.
 
 ### Configuring Your Hosts File
-Add the following entry to your systems `/etc/hosts` file.
+Add the following entry to your **host** system's `/etc/hosts` file.
+
+> On WSL2 this is the Native Windows host file (`/c/Windows/System32/drivers/etc/hosts`)
 
 ```bash
 127.0.0.1 magento2.test
