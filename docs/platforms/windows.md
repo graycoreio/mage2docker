@@ -20,14 +20,14 @@ The [instructions for installing WSL2](https://docs.microsoft.com/en-us/windows/
 #### Connect to the Ubuntu VM
 You can use whatever preferred terminal to connect to the Ubuntu VM, but the native `bash` that comes with `WSL` is gernerally sufficient. 
 
-> :warning: *The tutorials from this point onwards assume that you're running terminal commands on Ubuntu and working with files on the WSL2 instance, NOT on your Windows filesystem.*
+> :warning: *The tutorials from this point (including the "Next Steps") assume that you're running terminal commands on Ubuntu and working with files on the WSL2 instance, NOT on your Windows filesystem. If this is not the case, it will be pointed out explicitly.*
 
 ### Installing PHP and Composer
 We'll need [PHP and composer to work with Magento day-to-day.](https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md).
 
 > Ensure that you've installed both PHP and composer on the WSL2 instance, not on your Windows host.
 
-## Fin
+## Next Steps
 At this point, you're done with specific Windows setup and you can continue along with setting up your Magento 2 project.
 
 * [Creating a Magento 2 project for the first time](/docs/stories/new-project.md)
