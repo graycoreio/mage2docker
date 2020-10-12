@@ -52,8 +52,11 @@ services:
       - "9300:9300"
     networks:
       - backend
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
 networks:
   frontend:
   backend:
 volumes:
   db_data:
+  es_data:
