@@ -3,9 +3,10 @@ version : '3'
 services:
     magento2:
         environment:
-        - CONFIG__DEFAULT__GENERAL__STORE__EMAIL__HOST=mailhog
-        - CONFIG__DEFAULT__GENERAL__STORE__EMAIL__PORT=1025
+        - PHP_SENDMAIL_PATH=/usr/sbin/sendmail -S mailhog:1025
     mailhog:
         image: mailhog/mailhog:v1.0.1
         ports: 
             - 8025:8025
+        networks:
+            - backend
