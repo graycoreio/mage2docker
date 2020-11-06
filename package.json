@@ -1,6 +1,6 @@
 {
   "name": "mage2docker",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "A performant, replicable, and production-like Magento 2 local development environment that leverages Docker.",
   "main": "index.js",
   "directories": {

@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.3.0](https://github.com/graycoreio/mage2docker/compare/v3.2.0...v3.3.0) (2020-11-06)
+
+
+### Features
+
+* **docker-develop:** adding mailhog service to docker-compose ([36a649d](https://github.com/graycoreio/mage2docker/commit/36a649dadd546397214b92db1fb0093efeeceb25))
+* **elasticsearch:** persist elasticsearch data ([a92f8e4](https://github.com/graycoreio/mage2docker/commit/a92f8e44dfbcce93421a611ad0ed036ff613d10f)), closes [#8](https://github.com/graycoreio/mage2docker/issues/8)
+* **mailhog:** make mailhog work out-of-the-box ([2bf208d](https://github.com/graycoreio/mage2docker/commit/2bf208d7decfe48ae7d256f02453276d2bdd0d70))
+* **php:** update opcache with empiric values for memory consumption and max_accelerated_files ([755df5e](https://github.com/graycoreio/mage2docker/commit/755df5eb090ff1831aff50728424d9373290e890))
+
 ## [3.2.0](https://github.com/graycoreio/mage2docker/compare/v3.1.0...v3.2.0) (2020-09-17)
 
 
