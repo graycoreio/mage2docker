@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.4.0](https://github.com/graycoreio/mage2docker/compare/v3.3.0...v3.4.0) (2020-11-24)
+
+
+### Features
+
+* **php:** make php.ini settings more production like by default ([8d982be](https://github.com/graycoreio/mage2docker/commit/8d982be164f1ce9aea400920d55cbf9dea1753a8))
+
 ## [3.3.0](https://github.com/graycoreio/mage2docker/compare/v3.2.0...v3.3.0) (2020-11-06)
 
 
