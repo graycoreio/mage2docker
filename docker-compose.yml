@@ -16,6 +16,8 @@ services:
     networks:
       - frontend
       - backend
+    env_file:
+      - ./.env
   database:
       image: mysql:5.7
       volumes:
