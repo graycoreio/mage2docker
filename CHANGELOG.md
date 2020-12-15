@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.5.0](https://github.com/graycoreio/mage2docker/compare/v3.4.0...v3.5.0) (2020-12-15)
+
+
+### Features
+
+* **magento2:** add envfile to ENV of magento container ([6ad018d](https://github.com/graycoreio/mage2docker/commit/6ad018de9ad95ebcf7defc4ef5e9dd505a6e271a))
+
+
+### Bug Fixes
+
+* **php,7.2,7.3,7.4:** pin composer to version 1 ([81b1a61](https://github.com/graycoreio/mage2docker/commit/81b1a61acec7de24e50be47e5349f55a9094f345))
+
 ## [3.4.0](https://github.com/graycoreio/mage2docker/compare/v3.3.0...v3.4.0) (2020-11-24)
 
 
