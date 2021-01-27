@@ -10,6 +10,8 @@ services:
       - frontend
     depends_on:
       - magento2
+    environment: 
+      - MAGENTO2_UPSTREAM=magento2
   magento2:
     image: graycore/magento-php:7.2-fpm-alpine-develop
     restart: always
