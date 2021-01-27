@@ -75,6 +75,10 @@ jobs:
         if: ${{ github.event_name == 'release' }}
         run: docker push graycore/magento-nginx:${{ matrix.nginx }}-alpine
 
+      - name: Publish graycore/magento-nginx:${{ matrix.nginx }}-alpine-${GITHUB_REF##*/} image
+        if: ${{ github.event_name == 'release' }}
+        run: docker push graycore/magento-nginx:${{ matrix.nginx }}-alpine-${GITHUB_REF##*/}
+
       - name: Publish graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop image
         if: ${{ github.event_name == 'release' }}
         run: docker push graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop
