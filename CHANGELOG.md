@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/graycoreio/mage2docker/compare/v3.5.0...v4.0.0) (2021-02-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* **nginx:** drop support for v1.17
+
+### Features
+
+* **nginx:** add support for nginx v1.19 ([#18](https://github.com/graycoreio/mage2docker/issues/18)) ([3ec7152](https://github.com/graycoreio/mage2docker/commit/3ec71522ec1a34abb6f5040fd18965a43974835b))
+
 ## [3.5.0](https://github.com/graycoreio/mage2docker/compare/v3.4.0...v3.5.0) (2020-12-15)
 
 
