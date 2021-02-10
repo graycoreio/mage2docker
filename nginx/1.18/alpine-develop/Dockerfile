@@ -9,6 +9,11 @@ RUN mkdir /etc/nginx/certs \
 COPY ./conf/nginx.conf /etc/nginx/
 COPY ./conf/default.conf.template /etc/nginx/templates/
 
+ENV MAGENTO2_UPSTREAM=localhost
+ENV MAGENTO2_UPSTREAM_PORT=9000
+ENV NGINX_PORT=8000
+ENV NGINX_TLS_PORT=8443
+
 EXPOSE 8443
 
 WORKDIR /var/www/html
