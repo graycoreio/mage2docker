@@ -1,0 +1,15 @@
+## This nginx configuration should serve as an example for a production configuration of nginx.
+## Do note that this configuration only serves non-encrypted connections. This is intentional;
+## traffic within the DMZ should not need to be encrypted unless absolutely required.
+
+upstream fastcgi_backend {
+  server  ${MAGENTO2_UPSTREAM}:${MAGENTO2_UPSTREAM_PORT};
+}
+
+server {
+  listen ${NGINX_PORT};
+
+  set $MAGE_ROOT /var/www/html;
+
+  include /var/www/html/nginx[.]conf*;
+}

@@ -1,0 +1,25 @@
+## This nginx configuration should serve as an example for a development configuration of nginx.
+## Do note that this configuration only serves an encrypted connection and will redirect all traffic to the TLS port.  
+
+upstream fastcgi_backend {
+  server  ${MAGENTO2_UPSTREAM}:${MAGENTO2_UPSTREAM_PORT};
+}
+
+server {
+  listen ${NGINX_PORT};
+  return 301 https://$host$request_uri;
+}
+
+server {
+  listen ${NGINX_TLS_PORT} ssl;
+
+  ssl_certificate /etc/nginx/certs/nginx.crt;
+  ssl_certificate_key /etc/nginx/certs/nginx.key;
+
+  set $MAGE_ROOT /var/www/html;
+
+  fastcgi_buffer_size 64k;
+  fastcgi_buffers 8 128k;
+
+  include /var/www/html/nginx[.]conf*;
+}
