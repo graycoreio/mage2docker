@@ -1,5 +1,5 @@
 # MacOS Prerequisites
-Mage2Docker supports MacOS via Docker for Mac. Unfortunately, as of writing this, MacOS has some [performance limitations](https://docs.docker.com/docker-for-mac/osxfs/#performance-issues-solutions-and-roadmap), so we have to maintain a special "Partial Sync" strategy for MacOS. [You can read more about it here](./docs/stories/sync/sync-strategies.md)
+Mage2Docker supports MacOS via Docker for Mac. Unfortunately, as of writing this, MacOS has some [performance limitations](https://docs.docker.com/docker-for-mac/osxfs/#performance-issues-solutions-and-roadmap), so we have to maintain a special "Partial Sync" strategy for MacOS. [You can read more about it here](/docs/stories/sync/sync-strategies.md#partial-sync-strategy)
 
 ## Install PHP & Composer
 You'll need `php` and `composer` on your host system to be able to use `composer` to install Magento's dependencies on your host system to allow for autocomplete and Xdebug support.
