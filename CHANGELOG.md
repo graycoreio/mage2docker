@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.0](https://github.com/graycoreio/mage2docker/compare/v4.0.1...v4.1.0) (2021-05-11)
+
+
+### Features
+
+* **mysql:** ignore database files in entrypoint to prevent overcomitting ([#21](https://github.com/graycoreio/mage2docker/issues/21)) ([bc1fae2](https://github.com/graycoreio/mage2docker/commit/bc1fae21586d1a92afd335ccd46e99be581622d2))
+
+
+### Bug Fixes
+
+* **nginx, 1.18:** add missing default env variables ([ac225ce](https://github.com/graycoreio/mage2docker/commit/ac225cee4dce6134296f88f24c8ea2355783d1d2))
+
 ### [4.0.1](https://github.com/graycoreio/mage2docker/compare/v4.0.0...v4.0.1) (2021-02-10)
 
 ## [4.0.0](https://github.com/graycoreio/mage2docker/compare/v3.5.0...v4.0.0) (2021-02-10)
