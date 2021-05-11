@@ -5,3 +5,5 @@ node_modules/
 nginx/certs
 
 compose/custom/*.yml
+
+mysql/docker-entrypoint-initdb.d/
