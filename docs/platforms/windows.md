@@ -30,8 +30,8 @@ We'll need [PHP and composer to work with Magento day-to-day.](https://getcompos
 ## Next Steps
 At this point, you're done with specific Windows setup and you can continue along with setting up your Magento 2 project.
 
-* [Creating a Magento 2 project for the first time](/docs/stories/new-project.md)
-* [Working with an existing Magento 2 project](/docs/stories/existing-project.md)
+* [Creating a Magento 2 project for the first time](../../docs/stories/new-project.md)
+* [Working with an existing Magento 2 project](../../docs/stories/existing-project.md)
 
 ## Tips and Tricks
 Your day-to-day work with Magento 2 will occur on the WSL 2 instance, but there are some useful techniques that you can use to give yourself a more typical "Windows" experience.
