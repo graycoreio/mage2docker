@@ -23,6 +23,11 @@ jobs:
       run: docker build ./php/${{ matrix.php }}/alpine-develop
         -t graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-${GITHUB_REF##*/}
         -t graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop
+
+    - name: Build the graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-xdebug image
+      run: docker build ./php/${{ matrix.php }}/alpine-develop-xdebug
+        -t graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-xdebug-${GITHUB_REF##*/}
+        -t graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-xdebug
     
     - name: Login to registry
       run: docker login -u $DOCKER_USER -p $DOCKER_PASS
@@ -46,7 +51,14 @@ jobs:
     - name: Publish tag graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-${GITHUB_REF##*/} image
       if: ${{ github.event_name == 'release' }}
       run: docker push graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-${GITHUB_REF##*/}
-  
+
+    - name: Publish latest graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-xdebug image
+      if: ${{ github.event_name == 'release' }} 
+      run: docker push graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-xdebug
+
+    - name: Publish tag graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-xdebug-${GITHUB_REF##*/} image
+      if: ${{ github.event_name == 'release' }}
+      run: docker push graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-xdebug-${GITHUB_REF##*/}  
   build-nginx:
     strategy:
       matrix:

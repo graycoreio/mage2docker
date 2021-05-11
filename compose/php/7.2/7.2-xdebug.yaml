@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  magento2:
+    image: graycore/magento-php:7.2-fpm-alpine-develop-xdebug
+    environment:
+      XDEBUG_REMOTE_PORT: "9002"
+      XDEBUG_REMOTE_HOST: "host.docker.internal"
