@@ -21,7 +21,11 @@ git clone https://www.github.com/graycoreio/mage2docker \
     && cd mage2docker
 ```
 
-> From here on out, we assume that you're working immediately within the new `mage2docker` directory nested inside your project.
+The end result should look like:
+
+![Folder Structure](../images/folder-structure.png)
+
+> From here on out, we assume that you're working within the new `mage2docker` directory nested inside your project, not the root Magento folder.
 
 ### Configuring Docker Composer
 Mage2Docker comes with a basic environment configuration file `.env.sample`, you can utilize this file to tailor your environment to your needs. 
