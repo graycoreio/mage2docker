@@ -2,4 +2,4 @@ version : '3'
 
 services:
     magento2:
-      image: graycore/magento-php:7.4fpm-alpine-develop
+      image: graycore/magento-php:7.4-fpm-alpine-develop
