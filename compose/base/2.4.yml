@@ -1,0 +1,58 @@
+version : '3'
+
+services:
+  ingress:
+    extends:
+      file: ./compose/base/base.yml
+      service: ingress
+    image: graycore/magento-nginx:1.18-alpine-develop
+    depends_on:
+    - magento2
+  magento2:
+    extends:
+      file: ./compose/base/base.yml
+      service: magento2
+    image: graycore/magento-php:7.4-fpm-alpine-develop
+    environment:
+    - CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH7_SERVER_HOSTNAME=elasticsearch
+    - CONFIG__DEFAULT__CATALOG__SEARCH__ENGINE=elasticsearch7
+    - CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH7_SERVER_PORT=9200
+  database:
+    extends:
+      file: ./compose/base/base.yml
+      service: database
+    image: mysql:5.7
+  cache:
+    extends:
+      file: ./compose/base/base.yml
+      service: cache
+    image: redis:5.0
+  message_queue:
+    extends:
+      file: ./compose/base/base.yml
+      service: message_queue
+    image: rabbitmq:3.5
+  fullpagecache:
+    extends:
+      file: ./compose/base/base.yml
+      service: fullpagecache
+    image: redis:5.0
+  sessioncache:
+    extends:
+      file: ./compose/base/base.yml
+      service: sessioncache
+    image: redis:5.0
+  elasticsearch:
+    extends:
+      file: ./compose/elasticsearch/7.6.yml
+      service: elasticsearch
+    networks:
+      - backend
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+networks:
+  frontend:
+  backend:
+volumes:
+  db_data:
+  es_data:
