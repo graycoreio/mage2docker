@@ -44,7 +44,7 @@ services:
     image: redis:5.0
   elasticsearch:
     extends:
-      file: ./compose/elasticsearch/7.6.yml
+      file: ./compose/elasticsearch/7.6.yaml
       service: elasticsearch
     networks:
       - backend
