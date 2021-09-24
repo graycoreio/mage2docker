@@ -31,8 +31,7 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
   sockets
 
 RUN curl -sS https://getcomposer.org/installer | \
-  php -- --install-dir=/usr/local/bin --filename=composer && \
-  composer self-update --1
+  php -- --install-dir=/usr/local/bin --filename=composer
 
 COPY conf/php.ini /usr/local/etc/php/
 
