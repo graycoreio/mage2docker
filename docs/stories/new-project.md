@@ -32,14 +32,15 @@ We recommend using `auth.json` in your user's directory, but when you're working
 ## Creating your Magento 2 Project
 [We recommend creating your Magento 2 project with composer.](https://devdocs.magento.com/guides/v2.3/install-gde/composer.html).
 
-To create in a specific directory
-```bash
-composer create-project --ignore-platform-reqs --repository-url=https://repo.magento.com/ magento/project-community-edition <install-directory-name> 
-```
+To create a specific version of a Magento2 Project
 
-To create in the current directory
+For the latest version.
 ```bash
-composer create-project --ignore-platform-reqs --repository-url=https://repo.magento.com/ magento/project-community-edition .
+composer create-project --ignore-platform-reqs --repository-url=https://repo.magento.com/ magento/project-community-edition=2.* <install-directory-name> 
+```
+For the latest in a relase line. e.g. 2.4
+```bash
+composer create-project --ignore-platform-reqs --repository-url=https://repo.magento.com/ magento/project-community-edition=2.4.* <install-directory-name> 
 ```
 
 > Do note that since you're running this command in an environment that may have a different php version than the actual systems that Mage2Docker uses for your Magento 2 application, you can safely add the `--ignore-platform-reqs` flag if composer complains of incorrect PHP versions or missing PHP extensions.
