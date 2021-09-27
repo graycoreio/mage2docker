@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/graycoreio/mage2docker/compare/v4.1.0...v5.0.0) (2021-09-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* **php:** composer 2 is now installed in the php containers
+* **configuration:** The default COMPOSE_FILE path has changed and the new root docker-compose.yml is empty. To fix your environment, see the updated env.sample. Likely, all you will have to do is append "./compose/base/2.3.yml" to your existing COMPOSE_FILE. If you run into problems, please report a Github issue.
+
+### Features
+
+* **configuration:** allow swapping between 2.3 and 2.4 more easily. ([3c5ada3](https://github.com/graycoreio/mage2docker/commit/3c5ada3309044d8e0e8329ff10f26ccee2274431))
+* **php:** 7.4, 7.3 now use composer 2 ([#32](https://github.com/graycoreio/mage2docker/issues/32)) ([3fc5c95](https://github.com/graycoreio/mage2docker/commit/3fc5c9581ef7c2bf3184525a88ebb14b45971bc7))
+
+
+### Bug Fixes
+
+* **php, 7.4:** add a missing hyphen in a docker image name in compose file ([13dcdc1](https://github.com/graycoreio/mage2docker/commit/13dcdc128c950e3c409442280b514efd316ce2be))
+
 ## [4.1.0](https://github.com/graycoreio/mage2docker/compare/v4.0.1...v4.1.0) (2021-05-11)
 
 
