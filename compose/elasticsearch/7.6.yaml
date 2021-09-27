@@ -10,3 +10,6 @@ services:
         image: elasticsearch:7.6.2
         environment:
         - discovery.type=single-node
+        ports:
+        - "9200:9200"
+        - "9300:9300"

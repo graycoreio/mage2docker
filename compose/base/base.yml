@@ -1,0 +1,50 @@
+version : '3'
+
+services:
+  ingress:
+    ports:
+      - "80:8000"
+      - "443:8443"
+    networks:
+      - frontend
+    environment: 
+      - MAGENTO2_UPSTREAM=magento2
+      - MAGENTO2_UPSTREAM_PORT=9000
+      - NGINX_PORT=8000
+      - NGINX_TLS_PORT=8443
+  magento2:
+    restart: always
+    networks:
+      - frontend
+      - backend
+    env_file:
+      - ../../.env
+  database:
+      volumes:
+       - db_data:/var/lib/mysql
+      restart: always
+      environment:
+            MYSQL_ROOT_PASSWORD: magento2
+            MYSQL_DATABASE: magento2
+            MYSQL_USER: magento2
+            MYSQL_PASSWORD: magento2
+      networks:
+        - backend
+  cache:
+    networks:
+      - backend
+  message_queue:
+    networks:
+      - backend
+  fullpagecache:
+    networks:
+      - backend
+  sessioncache:
+    networks:
+      - backend
+networks:
+  frontend:
+  backend:
+volumes:
+  db_data:
+
