@@ -27,7 +27,7 @@ The end result should look like:
 
 > From here on out, we assume that you're working within the new `mage2docker` directory nested inside your project, not the root Magento folder.
 
-### Configuring Docker Composer
+### Configuring Docker Compose
 Mage2Docker comes with a basic environment configuration file `.env.sample`, you can utilize this file to tailor your environment to your needs. 
 
 #### Copy this file into a new `.env` file.**
@@ -96,9 +96,6 @@ docker-compose exec magento2 bin/magento setup:config:set --cache-backend=redis 
 docker-compose exec magento2 bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=fullpagecache --page-cache-redis-db=0
 docker-compose exec magento2 bin/magento setup:config:set --session-save=redis --session-save-redis-host=sessioncache --session-save-redis-db=0
 docker-compose exec magento2 bin/magento setup:config:set --amqp-host="message_queue" --amqp-port="5672" --amqp-user="guest" --amqp-password="guest"
-docker-compose exec magento2 bin/magento config:set catalog/search/engine "elasticsearch6" --lock-env
-docker-compose exec magento2 bin/magento config:set catalog/search/elasticsearch6_server_hostname "elasticsearch" --lock-env
-docker-compose exec magento2 bin/magento config:set catalog/search/elasticsearch6_index_prefix "magento" --lock-env
 ```
 
 ## Taking the Environment Down
