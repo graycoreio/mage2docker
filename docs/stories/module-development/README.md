@@ -6,4 +6,4 @@ Magento 2 module development is natively supported by composer, as Magento 2 pac
 |-----------------|----------------------------------------|
 | Windows w/ WSL2 | Native                                 |
 | Linux           | Native                                 |
-| MacOS           | [ mage2docker-modules ] ( ./macos.md ) |
+| MacOS           | [mage2docker-modules](./macos.md)      |
