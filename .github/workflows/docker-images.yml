@@ -4,6 +4,9 @@ on:
   release:
     types: [published]
   pull_request:
+    paths:
+      - '!docs/**'
+      - '!**/*.md'
     branches:
       - master
 jobs:
