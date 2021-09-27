@@ -20,7 +20,7 @@ cat ~/.composer/auth.json
 
 If you have a `auth.json` file here, you have most likely already configured your credentials and can skip to the next step.
 
-If you don't see your credentials there, [you can follow the Magento 2 guide to find your credentials](https://devdocs.magento.com/guides/v2.3/install-gde/prereq/connect-auth.html) and copy the `auth.json.sample` [found in the Magento 2 repo](https://github.com/magento/magento2) to your user's `auth.json` file: `~/.composer/auth.json` file and fill out the required credentials.
+If you don't see your credentials there, [you can follow the Magento 2 guide to find your credentials](https://devdocs.magento.com/guides/v2.3/install-gde/prereq/connect-auth.html) and copy the `auth.json.sample` [found in the Magento 2 repo](https://github.com/magento/magento2/blob/2.4-develop/auth.json.sample) to your user's `auth.json` file: `~/.composer/auth.json` file and fill out the required credentials.
 
 ```bash
 cp /path/to/magento/project/auth.json.sample ~/.composer/auth.json
