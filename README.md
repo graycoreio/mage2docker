@@ -50,3 +50,4 @@ To get started, pick your operating system from the list below. Don't see yours?
 * :gear: [Infinitely Configurable](./docs/stories/configuring.md)
 * Magento 2 Open Source & Commerce (Not Cloud) Support
   * If you're using cloud, please use the ["Cloud Docker" project created by Adobe](https://devdocs.magento.com/cloud/docker/docker-config.html)
+* :package: [Composer Package Development](./docs/stories/module-development/README.md)
