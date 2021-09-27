@@ -15,6 +15,17 @@ This project intends to create an opinionated, performant, replicable, and produ
 [![Magento v2.3 Supported](https://img.shields.io/badge/Magento-2.3-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)](https://magento.com/)
 [![Magento v2.4 Supported](https://img.shields.io/badge/Magento-2.4-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)](https://magento.com/)
 
+## Compatibility Table
+| Magento Version | Mage2Docker Version | End of Release Life |
+|-----------------|---------------------|---------------------|
+| 2.2.*           | N/A                 | Dec 2019            |
+| <2.3.7          | v4.1.0              | Apr 2022            |
+| >=2.3.7         | v5.0.0              | Apr 2022            |
+| 2.4.0           | v4.1.0              | Nov 2022            |
+| 2.4.1           | v4.1.0              | Nov 2022            |
+| 2.4.2           | v5.0.0              | Nov 2022            |
+| 2.4.3           | v5.0.0              | Nov 2022            |
+
 ## Getting Started
 To get started, pick your operating system from the list below. Don't see yours? [Make an issue.](https://github.com/graycoreio/mage2docker/issues/new?assignees=damienwebdev&labels=feat&template=feature_request.md&title=%5BFEAT%5D)
 
