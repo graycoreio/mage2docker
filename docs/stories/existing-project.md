@@ -96,6 +96,8 @@ docker-compose exec magento2 bin/magento setup:config:set --cache-backend=redis 
 docker-compose exec magento2 bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=fullpagecache --page-cache-redis-db=0
 docker-compose exec magento2 bin/magento setup:config:set --session-save=redis --session-save-redis-host=sessioncache --session-save-redis-db=0
 docker-compose exec magento2 bin/magento setup:config:set --amqp-host="message_queue" --amqp-port="5672" --amqp-user="guest" --amqp-password="guest"
+
+bin/magento deploy:mode:set developer
 ```
 
 ## Taking the Environment Down
