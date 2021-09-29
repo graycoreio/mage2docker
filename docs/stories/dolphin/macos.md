@@ -1,1 +1,0 @@
-# Dolphin for MacOS

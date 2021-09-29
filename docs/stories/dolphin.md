@@ -1,35 +1,3 @@
-# Dolphin
-
-The next step in Mage2Docker workflows. All the things you liked, meeting the original promise of "it works on all machines".
-
-## The Problem
-
-For the longest time, Graycore engineers (and those users who use Mage2Docker) have had to suffer mechanical differences between Magento environments based upon which platform the developer happens to be using.
-
-For example, MacOS developers had to either have PHP and Composer installed in their host enviromments, or [suffer the wrath of Docker-for-Mac file system performance issues.](https://github.com/docker/roadmap/issues/7)
-
-In addition, developers working on Windows had to use WSL2 in order to get started. While WSL2 is a wonderful product, it adds additional complexity on top of an already complicated setup.
-
-Finally, for all three platforms, file-system permissions as a result of file mounting behaviors per platform were the norm not the exception, ultimately frustrating everyone.
-
-What had started as a "clone once, run everywhere" system was overly complicated and the abstraction was extremely leaky.
-
-Queue 2021. Github Codespaces have become more and more common, and many users who previously leveraged PHPStorm to develop Magento 2 were happily switching over to VSCode because, for your average Magento user, the utility (or greater) was the same, but there wasn't an associated recurring license fee.
-
-As such, we felt it was time to attempt to solve our cross-platform local development environment problems a different way.
-
-## The solution
-
-With the Mage2Docker Dolphin project, we've managed to finally abstract away the platform problem by leveraging VSCode's Devcontainers or (if you have access to it) Github Codespaces.
-
-You can now TRULY develop cross-platform without concerning yourself with the underlying system behavior as you actually work directly inside the docker container.
-
-***For our current dependents, we still support the `COMPOSE_FILE` behavior in `.env`, but strongly encourage you to try out Dolphin as its where we're looking to invest our time and effort in the long term.***
-
-## Trying it out
-
-So, that's a lot of talk and, as devs, we know that the proof is in the pudding - let's get started.
-
 ### Prerequisites
 
 * Docker
@@ -83,7 +51,7 @@ You will need to uncomment the following configurations and select the [appropri
 COMPOSE_PROJECT_NAME
 ```
 
-> For long-time users, don't worry - all the old configurability behavior previous defined by merging `yml` files together still works with Dolphin and `devcontainer`. This isn't documented quite yet, but we guarantee it will still work!
+> For long-time users, you may note that COMPOSE_FILE is distinctly missing. Don't worry - all the old configurability behavior previous defined by merging `yml` files together still works with Dolphin and `devcontainer`. This isn't documented quite yet, but we guarantee it will still work!
 
 > If you have multiple Magento projects on your system, **please ensure that the COMPOSE_PROJECT_NAME value is unique**, otherwise you will find out that you've accidentally shared data between different projects and you'll be in for a world of pain.
 
@@ -94,9 +62,9 @@ Add the following entry to your **host** system's `/etc/hosts` file.
 127.0.0.1 magento2.test
 ```
 
-### Install the recommended VSCode extensions and the `devcontainer-cli`
-
-[See the VSCode docs.](https://code.visualstudio.com/docs/remote/devcontainer-cli)
+### Install the recommended VSCode Workspace extensions and the `devcontainer-cli`
+* [Install Recommended Extensions](https://code.visualstudio.com/docs/editor/extension-marketplace#_browse-for-extensions)
+* [Install the devcontainer cli](https://code.visualstudio.com/docs/remote/devcontainer-cli)
 
 ### Start your environment
 From your `mage2docker` repo:

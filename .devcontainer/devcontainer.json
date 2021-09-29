@@ -9,7 +9,22 @@
         "felixfbecker.php-debug",
         "ikappas.phpcs",
         "neilbrayfield.php-docblocker",
-        "redhat.vscode-yaml",
         "valeryanm.vscode-phpsab"
-    ]
+	],
+	"service": "magento2",
+    "shutdownAction": "none",
+    "dockerComposeFile": [
+        "../docker-compose.yml",
+        "../compose/base/2.3.yml",
+        "../compose/sync/containersync.yml"
+    ],
+    "settings": {
+        "terminal.integrated.profiles.linux": {
+            "bash": {
+                "path": "sh",
+                "icon": "terminal-linux"
+            },
+        },
+        "terminal.integrated.shell.linux": "sh"
+    }
 }

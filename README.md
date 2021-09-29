@@ -20,16 +20,22 @@ This project intends to create an opinionated, performant, replicable, and produ
 |-----------------|---------------------|---------------------|
 | 2.2.*           | N/A                 | Dec 2019            |
 | <2.3.7          | v4.1.0              | Apr 2022            |
-| >=2.3.7         | v5.0.0              | Apr 2022            |
+| >=2.3.7         | >v5.0.0              | Apr 2022            |
 | 2.4.0           | v4.1.0              | Nov 2022            |
 | 2.4.1           | v4.1.0              | Nov 2022            |
-| 2.4.2           | v5.0.0              | Nov 2022            |
-| 2.4.3           | v5.0.0              | Nov 2022            |
+| 2.4.2           | >v5.0.0              | Nov 2022            |
+| 2.4.3           | >v5.0.0              | Nov 2022            |
 
 ## Getting Started
 To get started, pick your operating system from the list below. Don't see yours? [Make an issue.](https://github.com/graycoreio/mage2docker/issues/new?assignees=damienwebdev&labels=feat&template=feature_request.md&title=%5BFEAT%5D)
 
 ## Supported Platforms
+
+### Dolphin
+Dolphin is the new fully cross-platform Mage2docker environment that leverages VSCode `devcontainers` and Github Codespaces. This is a [significantly smoother install for most users and we strongly encourage you to use it](./docs/stories/dolphin.md). For those users curious on why we've made this changes, [please read the architecture discussion.](./docs/arch/dolphin.md)
+
+
+### Legacy Mage2Docker
 * [Windows via WSL2](./docs/platforms/windows.md)
 * [MacOS](./docs/platforms/macos.md)
 * [Linux - Ubuntu](./docs/platforms/ubuntu.md)
