@@ -1,4 +1,4 @@
-FROM graycore/magento-php:7.3-fpm-alpine
+FROM graycore/magento-php:7.4-fpm-alpine
 
 # Blackfire
 ENV current_os=alpine
