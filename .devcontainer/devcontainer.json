@@ -1,0 +1,15 @@
+{
+    "workspaceFolder": "/var/www/html",
+    "forwardPorts": [
+        80,
+        443
+    ],
+    "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "felixfbecker.php-debug",
+        "ikappas.phpcs",
+        "neilbrayfield.php-docblocker",
+        "redhat.vscode-yaml",
+        "valeryanm.vscode-phpsab"
+    ]
+}

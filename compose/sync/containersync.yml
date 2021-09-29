@@ -1,0 +1,11 @@
+version : '3'
+
+services: 
+  magento2:
+    volumes: &appvolumes
+      - appdata:/var/www/html
+      - ~/.composer:/root/.composer:delegated
+  ingress:
+    volumes: *appvolumes
+volumes: 
+  appdata:
