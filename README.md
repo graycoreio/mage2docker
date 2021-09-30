@@ -2,7 +2,7 @@
 
 > Get rid of your "it works on my machine" arguments.
 
-This project intends to create an opinionated, performant, replicable, and production-like Magento 2 local development environment that leverages Docker.
+This project intends to create an opinionated, performant, replicable, and production-like Magento 2 local development environment that leverages Docker, VSCode and `devcontainers`.
 
 [![graycore/magento2-php pulls](https://img.shields.io/docker/pulls/graycore/magento-php.svg?label=magento-php%20docker%20pulls)](https://hub.docker.com/r/graycore/magento-php)
 [![Mage2Docker Commit Activity](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg)](https://github.com/graycoreop/mage2docker/graphs/commit-activity)
@@ -34,17 +34,11 @@ To get started, pick your operating system from the list below. Don't see yours?
 ### Dolphin
 Dolphin is the new fully cross-platform Mage2docker environment that leverages VSCode `devcontainers` and Github Codespaces. This is a [significantly smoother install for most users and we strongly encourage you to use it](./docs/stories/dolphin.md). For those users curious on why we've made this changes, [please read the architecture discussion.](./docs/arch/dolphin.md)
 
-
-### Legacy Mage2Docker
-* [Windows via WSL2](./docs/platforms/windows.md)
-* [MacOS](./docs/platforms/macos.md)
-* [Linux - Ubuntu](./docs/platforms/ubuntu.md)
-
 ## Prerequisites
 
 #### Hardware
-* 16GB RAM
-* 4 Cores
+* 4GB RAM
+* 2 Cores
 
 ## Features
 
@@ -56,3 +50,5 @@ Dolphin is the new fully cross-platform Mage2docker environment that leverages V
 * :gear: [Infinitely Configurable](./docs/stories/configuring.md)
 * Magento 2 Open Source & Commerce (Not Cloud) Support
   * If you're using cloud, please use the ["Cloud Docker" project created by Adobe](https://devdocs.magento.com/cloud/docker/docker-config.html)
+* [VSCode](https://code.visualstudio.com/)
+* [Codespaces ready](https://github.com/features/codespaces)
