@@ -60,6 +60,8 @@ find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} +
 
 find var generated pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 
+bin/magento deploy:mode:set developer
+
 echo " __      __       .__                               "
 echo "/  \    /  \ ____ |  |   ____  ____   _____   ____  "
 echo "\   \/\/   // __ \|  | _/ ___\/  _ \ /     \_/ __ \ "

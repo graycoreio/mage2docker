@@ -1,10 +1,12 @@
 #!/bin/sh
+set -e
 
 if [ -f 'pub/index.php' ]; then 
-    echo 'Magento Codebase Discovered, Skipping Clone...'; 
-else 
-    git clone https://github.com/magento/magento2.git \
-        --depth=1 .; 
+    echo 'Magento Codebase Discovered, Skipping project creation...'; 
+elif [ "$COMPOSER_PROJECT" = true ]; then
+    composer create-project --no-install --repository-url=https://repo.magento.com/ $COMPOSER_PROJECT . 
+else
+    git clone $GIT_REPO --depth=1 .; 
 fi
 
 composer install
@@ -57,6 +59,8 @@ chown www-data:www-data var generated pub/static pub/media app/etc -R
 find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} +
 
 find var generated pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+
+bin/magento deploy:mode:set developer
 
 echo " __      __       .__                               "
 echo "/  \    /  \ ____ |  |   ____  ____   _____   ____  "
