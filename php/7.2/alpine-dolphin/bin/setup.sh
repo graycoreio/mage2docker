@@ -3,7 +3,7 @@ set -e
 
 if [ -f 'pub/index.php' ]; then 
     echo 'Magento Codebase Discovered, Skipping project creation...'; 
-elif [ "$COMPOSER_PROJECT" = true ]; then
+elif [ "$COMPOSER_PROJECT_ENABLED" == true ]; then
     composer create-project --no-install --repository-url=https://repo.magento.com/ $COMPOSER_PROJECT . 
 else
     git clone $GIT_REPO --depth=1 .; 

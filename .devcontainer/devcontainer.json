@@ -16,8 +16,7 @@
     "dockerComposeFile": [
         "../docker-compose.yml",
         "../compose/base/2.4.yml",
-        "../compose/sync/containersync.yml",
-        "../compose/tls/docker-compose.tls.yml"
+        "../compose/sync/containersync.yml"
     ],
     "settings": {
         "terminal.integrated.profiles.linux": {
@@ -28,7 +27,7 @@
         },
         "terminal.integrated.shell.linux": "sh"
     },
-    "onCreateCommand": [
+    "postCreateCommand": [
         "/bin/sh",
         "-c",
         "/root/setup.sh"

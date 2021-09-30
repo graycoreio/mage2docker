@@ -62,8 +62,9 @@ Add the following entry to your **host** system's `/etc/hosts` file.
 127.0.0.1 magento2.test
 ```
 
-If you're using [WSL2, add this as well.](https://github.com/microsoft/WSL/issues/4983)
+If you're using [WSL2, use this instead.](https://github.com/microsoft/WSL/issues/4983) Be sure to do this on the Windows host. 
 ```bash
+127.0.0.1 magento2.test
 [::1] magento2.test
 ```
 
