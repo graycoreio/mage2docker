@@ -18,6 +18,8 @@ RUN apk add --no-cache \
 
 COPY conf/php.ini /usr/local/etc/php/
 
+COPY bin/setup.sh /root/
+
 RUN mkdir -p /var/www/html
 
 WORKDIR /var/www/html

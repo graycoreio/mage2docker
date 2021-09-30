@@ -12,10 +12,10 @@
         "valeryanm.vscode-phpsab"
 	],
 	"service": "magento2",
-    "shutdownAction": "none",
+    "shutdownAction": "stopCompose",
     "dockerComposeFile": [
         "../docker-compose.yml",
-        "../compose/base/2.3.yml",
+        "../compose/base/2.4.yml",
         "../compose/sync/containersync.yml"
     ],
     "settings": {
@@ -26,5 +26,10 @@
             },
         },
         "terminal.integrated.shell.linux": "sh"
-    }
+    },
+    "postStartCommand": [
+        "/bin/sh",
+        "-c",
+        "/root/setup.sh"
+    ]
 }

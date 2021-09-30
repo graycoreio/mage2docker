@@ -51,7 +51,7 @@ You will need to uncomment the following configurations and select the [appropri
 COMPOSE_PROJECT_NAME
 ```
 
-> For long-time users, you may note that COMPOSE_FILE is distinctly missing. Don't worry - all the old configurability behavior previous defined by merging `yml` files together still works with Dolphin and `devcontainer`. This isn't documented quite yet, but we guarantee it will still work!
+> For long-time users, you may note that COMPOSE_FILE is distinctly missing. Don't worry - all the old configuration behaviors previous supported by merging `yml` files together still work with Dolphin and `devcontainer`. This isn't documented quite yet, but we guarantee it will still work!
 
 > If you have multiple Magento projects on your system, **please ensure that the COMPOSE_PROJECT_NAME value is unique**, otherwise you will find out that you've accidentally shared data between different projects and you'll be in for a world of pain.
 
@@ -60,6 +60,11 @@ Add the following entry to your **host** system's `/etc/hosts` file.
 
 ```bash
 127.0.0.1 magento2.test
+```
+
+If you're using [WSL2, add this as well.](https://github.com/microsoft/WSL/issues/4983)
+```bash
+[::1] magento2.test
 ```
 
 ### Install the recommended VSCode Workspace extensions and the `devcontainer-cli`
@@ -72,29 +77,5 @@ From your `mage2docker` repo:
 ```bash
 devcontainer open
 ```
-
-### Creating your Magento 2 Project
-[We recommend creating your Magento 2 project with composer.](https://devdocs.magento.com/guides/v2.3/install-gde/composer.html).
-
-To create a specific version of a Magento2 Project
-
-For the latest version.
-```bash
-composer create-project --ignore-platform-reqs --repository-url=https://repo.magento.com/ magento/project-community-edition=2.* .
-```
-For the latest in a relase line. e.g. 2.4
-```bash
-composer create-project --ignore-platform-reqs --repository-url=https://repo.magento.com/ magento/project-community-edition=2.4.* .
-```
-
-### Fixup Permissions
-[See the devdocs.](https://devdocs.magento.com/guides/v2.4/config-guide/prod/prod_file-sys-perms.html#mage-owner-two-devel)
-
-```bash
-chown www-data:www-data var generated pub/static pub/media app/etc -R
-find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} +
-find var generated pub/static pub/media app/etc -type d -exec chmod g+ws {} +
-```
-
 ### See the Setup Page
 Now, you should be able to visit `https://magento2.test` in your browser and see the setup page.
