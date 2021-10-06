@@ -13,7 +13,7 @@ services:
       - NGINX_PORT=8000
       - NGINX_TLS_PORT=8443
   magento2:
-    restart: always
+    restart: on-failure
     networks:
       - frontend
       - backend
@@ -22,7 +22,7 @@ services:
   database:
       volumes:
        - db_data:/var/lib/mysql
-      restart: always
+      restart: on-failure
       environment:
             MYSQL_ROOT_PASSWORD: magento2
             MYSQL_DATABASE: magento2
