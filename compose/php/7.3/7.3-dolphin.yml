@@ -6,5 +6,5 @@ services:
     build: ./php/7.3/alpine-dolphin
     environment:
       XDEBUG_CLIENT_PORT: "9003"
-      XDEBUG_CLIENT_HOST: "host.docker.internal"
+      XDEBUG_CLIENT_HOST: "localhost"
       XDEBUG_MODE: "debug"
