@@ -19,6 +19,9 @@ services:
     - CONFIG__DEFAULT__CATALOG__SEARCH__ENGINE=elasticsearch7
     - CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH7_SERVER_PORT=9200
     - PHP_SENDMAIL_PATH=/usr/sbin/sendmail -S mailhog:1025
+    - XDEBUG_CLIENT_PORT=9003
+    - XDEBUG_CLIENT_HOST=localhost
+    - XDEBUG_MODE=debug
   database:
     extends:
       file: ./compose/base/base.yml
