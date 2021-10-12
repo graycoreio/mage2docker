@@ -1,8 +1,16 @@
 #!/bin/sh
 set -e
 
+# Set the project namespace.
+project="$(dirname "$0")"
+
+source $project/util/welcome.sh
+
 if [ -f 'pub/index.php' ]; then 
-    echo 'Magento Codebase Discovered, Skipping project creation...'; 
+    echo 'Magento Codebase Discovered, Skipping project creation...';
+    echo '---------------------------------------------------------';
+    welcomeMessage;
+    exit 0; 
 elif [ "$COMPOSER_PROJECT_ENABLED" == true ]; then
     composer create-project --no-install --repository-url=https://repo.magento.com/ $COMPOSER_PROJECT . 
 else
@@ -92,19 +100,4 @@ find var generated pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 
 bin/magento deploy:mode:set developer
 
-echo " __      __       .__                               "
-echo "/  \    /  \ ____ |  |   ____  ____   _____   ____  "
-echo "\   \/\/   // __ \|  | _/ ___\/  _ \ /     \_/ __ \ "
-echo " \        /\  ___/|  |_\  \__(  <_> )  Y Y  \  ___/ "
-echo "  \__/\  /  \___  >____/\___  >____/|__|_|  /\___  >"
-echo "       \/       \/          \/            \/     \/ "
-echo ""
-echo "**********************************"
-echo "* Wake me, when you need me."
-echo "*"
-echo "* To get started, visit your store in your browser at https://$MAGENTO_DOMAIN".
-echo "* You can access the Admin UI at https://$MAGENTO_DOMAIN/$MAGENTO_ADMIN_PATH". 
-echo "* Your credentials are..."
-echo "* Username: $MAGENTO_ADMIN_USERNAME"
-echo "* Password: $MAGENTO_ADMIN_PASSWORD"
-echo "**********************************"
+welcomeMessage;
