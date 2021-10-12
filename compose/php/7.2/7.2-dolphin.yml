@@ -6,4 +6,4 @@ services:
     build: ./php/7.2/alpine-dolphin
     environment:
       XDEBUG_REMOTE_PORT: "9002"
-      XDEBUG_REMOTE_HOST: "host.docker.internal"
+      XDEBUG_REMOTE_HOST: ""localhost""
