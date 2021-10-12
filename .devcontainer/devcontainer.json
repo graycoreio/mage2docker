@@ -2,7 +2,8 @@
     "workspaceFolder": "/var/www/html",
     "forwardPorts": [
         80,
-        443
+        443,
+        8025
     ],
     "extensions": [
         "bmewburn.vscode-intelephense-client",

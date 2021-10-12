@@ -18,6 +18,7 @@ services:
     - CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH7_SERVER_HOSTNAME=elasticsearch
     - CONFIG__DEFAULT__CATALOG__SEARCH__ENGINE=elasticsearch7
     - CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH7_SERVER_PORT=9200
+    - PHP_SENDMAIL_PATH=/usr/sbin/sendmail -S mailhog:1025
   database:
     extends:
       file: ./compose/base/base.yml
@@ -51,6 +52,10 @@ services:
       - backend
     volumes:
       - es_data:/usr/share/elasticsearch/data
+  mailhog:
+    extends:
+      file: ./compose/mailhog/1.0.yml
+      service: mailhog
 networks:
   frontend:
   backend:
