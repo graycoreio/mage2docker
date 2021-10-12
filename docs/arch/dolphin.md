@@ -6,7 +6,7 @@ The next step forward in Mage2Docker local development environments. All the thi
 
 For the longest time, Graycore engineers (and external users who use Mage2Docker) have had to suffer mechanical differences between local Magento 2 environments depending upon which operating system the developer happens to be using.
 
-For example, MacOS developers had to either have both PHP and Composer installed in their host enviromments or [suffer the wrath of Docker-for-Mac file system performance issues.](https://github.com/docker/roadmap/issues/7)
+For example, MacOS developers had to either have both PHP and Composer installed in their host environments or [suffer the wrath of Docker-for-Mac file system performance issues.](https://github.com/docker/roadmap/issues/7)
 
 In addition, developers working on Windows had to use WSL2 in order to get started. While WSL2 is a wonderful product, it adds additional complexity on top of an already complicated setup.
 
