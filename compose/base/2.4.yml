@@ -54,7 +54,7 @@ services:
       - es_data:/usr/share/elasticsearch/data
   mailhog:
     extends:
-      file: ./compose/mailhog/1.0.yml
+      file: ./compose/mailhog/1.0.yaml
       service: mailhog
 networks:
   frontend:
