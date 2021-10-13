@@ -1,0 +1,22 @@
+name: Validate The Environment
+
+on:
+  pull_request:
+    paths:
+      - "!docs/**"
+      - "!**/*.md"
+    branches:
+      - master
+
+jobs:
+  run:
+    strategy:
+        matrix:
+          COMPOSER_PROJECT: ["magento/project-community-edition=2.3.*", "magento/project-community-edition=2.4.*"]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the stack
+      run: docker-compose up -d
+    - name: Test
+      run: docker run --network container:webapp-frontend appropriate/curl -s --retry 10 --retry-connrefused https://localhost:443/
