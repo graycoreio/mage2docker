@@ -7,8 +7,8 @@ Sometimes things go wrong and you have to rebuild your local environment from sc
 ## Delete the docker environment
 
 ```bash
-docker-compose down
-docker volume prune
+docker container rm $(docker container ls -aq --filter name=YOUR_ENV_NAME*)
+docker volume rm $(docker volume ls -q --filter name=YOUR_ENV_NAME*)
 ```
 
 ## This time with feeling
