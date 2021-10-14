@@ -34,7 +34,7 @@ cp /path/to/magento/project/auth.json.sample ~/.composer/auth.json
 ``` 
 
 ### Per-project configuration
-We recommend using `auth.json` in your user's directory, but when you're working on multiple Magento 2 applications at once, you may need multiple `auth.json`. You can simply add the `auth.json` to the root of your Magento 2 project, and composer will use those credentials instead.
+We recommend using `auth.json` in your user's directory, but when you're working on multiple Magento 2 applications at once, you may need multiple `auth.json`. You can simply add the `auth.json` to the root of your Magento 2 project after project creation, and composer will use those credentials instead.
 
 ### Configuring Docker Compose
 Mage2Docker comes with a basic environment configuration file `.env.sample`, you can utilize this file to tailor your environment to your needs. 
@@ -69,7 +69,7 @@ If you're using [WSL2, use this instead.](https://github.com/microsoft/WSL/issue
 ```
 
 ### Install the recommended VSCode Workspace extensions and the `devcontainer-cli`
-* [Install Recommended Extensions](https://code.visualstudio.com/docs/editor/extension-marketplace#_browse-for-extensions)
+* [Install Recommended Extensions](../../.vscode/extensions.json)
 * [Install the devcontainer cli](https://code.visualstudio.com/docs/remote/devcontainer-cli)
 
 ### Start your environment
@@ -79,4 +79,4 @@ From your `mage2docker` repo:
 devcontainer open
 ```
 ### See the Setup Page
-Now, you should be able to visit `https://magento2.test` in your browser and see the setup page.
+Now, you should be able to visit `https://magento2.test` in your browser and see a fresh Luma Magento store with Venia Sample data!

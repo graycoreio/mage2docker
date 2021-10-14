@@ -20,17 +20,20 @@ This project intends to create an opinionated, performant, replicable, and produ
 |-----------------|---------------------|---------------------|
 | 2.2.*           | N/A                 | Dec 2019            |
 | <2.3.7          | v4.1.0              | Apr 2022            |
-| >=2.3.7         | >v5.0.0              | Apr 2022            |
+| >=2.3.7         | >v5.0.0             | Apr 2022            |
 | 2.4.0           | v4.1.0              | Nov 2022            |
 | 2.4.1           | v4.1.0              | Nov 2022            |
-| 2.4.2           | >v5.0.0              | Nov 2022            |
-| 2.4.3           | >v5.0.0              | Nov 2022            |
-
-## Getting Started
-To get started, pick your operating system from the list below. Don't see yours? [Make an issue.](https://github.com/graycoreio/mage2docker/issues/new?assignees=damienwebdev&labels=feat&template=feature_request.md&title=%5BFEAT%5D)
+| 2.4.2           | >v5.0.0             | Nov 2022            |
+| 2.4.3           | >v5.0.0             | Nov 2022            |
 
 ### Dolphin
-Dolphin is the new fully cross-platform Mage2docker environment that leverages VSCode `devcontainers` and Github Codespaces. This is a [significantly smoother install for most users and we strongly encourage you to use it](./docs/stories/dolphin.md). For those users curious on why we've made these changes, [please read the architecture discussion.](./docs/arch/dolphin.md)
+As of Mage2Docker v6.0.0, Dolphin is the new fully cross-platform Mage2docker environment that leverages VSCode `devcontainers` and Github Codespaces.
+
+To get started, see [the new significantly smoother installation process. We strongly encourage you to use it](./docs/stories/dolphin.md). We will be dropping support for the following features in release ~v9.0.0 **(targeted for March, 2022) to align with the release of Magento v2.4.4**.
+
+* [Sync Strategies](./docs/stories/sync/sync-strategies.md)
+
+For those users curious on why we've made these changes, [please read the architecture discussion.](./docs/arch/dolphin.md)
 
 ## Prerequisites
 
