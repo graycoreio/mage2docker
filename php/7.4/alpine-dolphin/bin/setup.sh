@@ -1,16 +1,20 @@
 #!/bin/sh
 set -e
 
+SETUP_START=`date +%s`
+
 # Set the project namespace.
 project="$(dirname "$0")"
 
 source $project/util/welcome.sh
 
-if [ -f 'pub/index.php' ]; then 
+if [ -f 'pub/index.php' ]; then
     echo 'Magento Codebase Discovered, Skipping project creation...';
     echo '---------------------------------------------------------';
     welcomeMessage;
-    exit 0; 
+    SETUP_END=`date +%s`       
+    echo "Setup took: $((SETUP_END-SETUP_START)) seconds..."         
+    exit 0;    
 elif [ "$COMPOSER_PROJECT_ENABLED" == true ]; then
     composer create-project --no-install --repository-url=https://repo.magento.com/ $COMPOSER_PROJECT . 
 else
@@ -101,3 +105,6 @@ find var generated pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 bin/magento deploy:mode:set developer
 
 welcomeMessage;
+
+SETUP_END=`date +%s`       
+echo "Setup took: $((SETUP_END-SETUP_START)) seconds..."      
