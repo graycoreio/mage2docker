@@ -69,6 +69,10 @@ bin/magento setup:config:set \
     --amqp-user='guest' \
     --amqp-password='guest'
 
+bin/magento config:set web/url/redirect_to_base 0
+
+bin/magento config:set web/seo/use_rewrites 1
+
 if [ "$MAGENTO_SAMPLE_DATA" == "venia" ]; then 
     echo "Installing 'Venia' Sample Data...";
     composer config repositories.catalog-venia vcs https://github.com/PMET-public/module-catalog-sample-data-venia
@@ -98,6 +102,7 @@ else
     echo "Skipping Sample Data Install...";
 fi
 
+bin/magento indexer:reindex
 
 chown www-data:www-data var generated pub/static pub/media app/etc -R
 
