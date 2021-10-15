@@ -7,6 +7,9 @@ SETUP_START=`date +%s`
 project="$(dirname "$0")"
 
 source $project/util/welcome.sh
+source $project/util/get-domain.sh
+
+PROJECT_DOMAIN=$(getProjectDomain)
 
 if [ -f 'pub/index.php' ]; then
     echo 'Magento Codebase Discovered, Skipping project creation...';
@@ -25,7 +28,7 @@ composer install
 
 bin/magento setup:install \
     --no-interaction \
-    --base-url=https://$MAGENTO_DOMAIN \
+    --base-url=https://$PROJECT_DOMAIN \
     --db-host=database \
     --db-name=magento2 \
     --db-user=magento2 \
