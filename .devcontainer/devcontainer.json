@@ -28,6 +28,7 @@
         },
         "terminal.integrated.shell.linux": "sh"
     },
+    "initializeCommand": "cp -u .env.sample .env",
     "postCreateCommand": [
         "/bin/sh",
         "-c",
