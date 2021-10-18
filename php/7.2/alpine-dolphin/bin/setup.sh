@@ -1,16 +1,23 @@
 #!/bin/sh
 set -e
 
+SETUP_START=`date +%s`
+
 # Set the project namespace.
 project="$(dirname "$0")"
 
 source $project/util/welcome.sh
+source $project/util/get-domain.sh
 
-if [ -f 'pub/index.php' ]; then 
+PROJECT_DOMAIN=$(getProjectDomain)
+
+if [ -f 'pub/index.php' ]; then
     echo 'Magento Codebase Discovered, Skipping project creation...';
     echo '---------------------------------------------------------';
     welcomeMessage;
-    exit 0; 
+    SETUP_END=`date +%s`       
+    echo "Setup took: $((SETUP_END-SETUP_START)) seconds..."         
+    exit 0;    
 elif [ "$COMPOSER_PROJECT_ENABLED" == true ]; then
     composer create-project --no-install --repository-url=https://repo.magento.com/ $COMPOSER_PROJECT . 
 else
@@ -21,7 +28,7 @@ composer install
 
 bin/magento setup:install \
     --no-interaction \
-    --base-url=https://$MAGENTO_DOMAIN \
+    --base-url=https://$PROJECT_DOMAIN \
     --db-host=database \
     --db-name=magento2 \
     --db-user=magento2 \
@@ -62,6 +69,10 @@ bin/magento setup:config:set \
     --amqp-user='guest' \
     --amqp-password='guest'
 
+bin/magento config:set web/url/redirect_to_base 0
+
+bin/magento config:set web/seo/use_rewrites 1
+
 if [ "$MAGENTO_SAMPLE_DATA" == "venia" ]; then 
     echo "Installing 'Venia' Sample Data...";
     composer config repositories.catalog-venia vcs https://github.com/PMET-public/module-catalog-sample-data-venia
@@ -91,6 +102,7 @@ else
     echo "Skipping Sample Data Install...";
 fi
 
+bin/magento indexer:reindex
 
 chown www-data:www-data var generated pub/static pub/media app/etc -R
 
@@ -101,3 +113,6 @@ find var generated pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 bin/magento deploy:mode:set developer
 
 welcomeMessage;
+
+SETUP_END=`date +%s`       
+echo "Setup took: $((SETUP_END-SETUP_START)) seconds..."      
