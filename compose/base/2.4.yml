@@ -5,16 +5,14 @@ services:
     extends:
       file: ./compose/base/base.yml
       service: ingress
-    image: graycore/magento-nginx:1.18-alpine-develop
-    build: ./nginx/1.18/alpine-develop
+    image: graycore/magento-nginx:1.18-alpine-develop-6.0.0-alpha.0
     depends_on:
     - magento2
   magento2:
     extends:
       file: ./compose/base/base.yml
       service: magento2
-    image: graycore/magento-php:7.4-fpm-alpine-dolphin
-    build: ./php/7.4/alpine-dolphin
+    image: graycore/magento-php:7.4-fpm-alpine-dolphin-6.0.0-alpha.0
     environment:
     - CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH7_SERVER_HOSTNAME=elasticsearch
     - CONFIG__DEFAULT__CATALOG__SEARCH__ENGINE=elasticsearch7

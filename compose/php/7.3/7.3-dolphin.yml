@@ -2,8 +2,7 @@ version: "3"
 
 services:
   magento2:
-    image: graycore/magento-php:7.3-fpm-alpine-dolphin
-    build: ./php/7.3/alpine-dolphin
+    image: graycore/magento-php:7.3-fpm-alpine-dolphin-6.0.0-alpha.0
     environment:
       XDEBUG_CLIENT_PORT: "9003"
       XDEBUG_CLIENT_HOST: "localhost"
