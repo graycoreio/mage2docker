@@ -58,6 +58,8 @@ services:
     extends:
       file: ./compose/mailhog/1.0.yaml
       service: mailhog
+    networks:
+      - backend
 networks:
   frontend:
   backend:
