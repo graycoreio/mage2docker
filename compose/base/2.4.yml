@@ -50,6 +50,10 @@ services:
       - backend
     volumes:
       - es_data:/usr/share/elasticsearch/data
+    deploy:
+      resources:
+        limits:
+          memory: 2G
 networks:
   frontend:
   backend:
