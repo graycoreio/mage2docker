@@ -54,6 +54,10 @@ services:
       - backend
     volumes:
       - es_data:/usr/share/elasticsearch/data
+    deploy:
+      resources:
+        limits:
+          memory: 2G
   mailhog:
     extends:
       file: ./compose/mailhog/1.0.yaml
