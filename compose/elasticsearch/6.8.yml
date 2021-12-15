@@ -7,7 +7,7 @@ services:
         - CONFIG__DEFAULT__CATALOG__SEARCH__ENGINE=elasticsearch6
         - CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH6_SERVER_PORT=9200
     elasticsearch:
-        image: elasticsearch:6.8.9
+        image: elasticsearch:6.8.21
         environment:
         - discovery.type=single-node
         ports:
