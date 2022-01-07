@@ -11,6 +11,10 @@ source $project/util/get-domain.sh
 
 PROJECT_DOMAIN=$(getProjectDomain)
 
+echo 'move to /var/www/html'
+cd /var/www/html
+echo 'working from $(pwd)'
+
 if [ -f 'pub/index.php' ]; then
     echo 'Magento Codebase Discovered, Skipping project creation...';
     echo '---------------------------------------------------------';
