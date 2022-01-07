@@ -23,12 +23,12 @@ if [ -f 'pub/index.php' ]; then
     echo "Setup took: $((SETUP_END-SETUP_START)) seconds..."         
     exit 0;    
 elif [ "$COMPOSER_PROJECT_ENABLED" == true ]; then
-    composer create-project --no-install --repository-url=https://repo.magento.com/ $COMPOSER_PROJECT . 
+    composer create-project --no-interaction --no-install --repository-url=https://repo.magento.com/ $COMPOSER_PROJECT . 
 else
     git clone $GIT_REPO --depth=1 .; 
 fi
 
-composer install
+composer install --no-interaction
 
 bin/magento setup:install \
     --no-interaction \
@@ -79,14 +79,14 @@ bin/magento config:set web/seo/use_rewrites 1
 
 if [ "$MAGENTO_SAMPLE_DATA" == "venia" ]; then 
     echo "Installing 'Venia' Sample Data...";
-    composer config repositories.catalog-venia vcs https://github.com/PMET-public/module-catalog-sample-data-venia
-    composer config repositories.configurable-venia vcs https://github.com/PMET-public/module-configurable-sample-data-venia
-    composer config repositories.customer-venia vcs https://github.com/PMET-public/module-customer-sample-data-venia
-    composer config repositories.tax-venia vcs https://github.com/PMET-public/module-tax-sample-data-venia
-    composer config repositories.sales-venia vcs https://github.com/PMET-public/module-sales-sample-data-venia
-    composer config repositories.media-venia vcs https://github.com/PMET-public/sample-data-media-venia
+    composer config --no-interaction repositories.catalog-venia vcs https://github.com/PMET-public/module-catalog-sample-data-venia
+    composer config --no-interaction repositories.configurable-venia vcs https://github.com/PMET-public/module-configurable-sample-data-venia
+    composer config --no-interaction repositories.customer-venia vcs https://github.com/PMET-public/module-customer-sample-data-venia
+    composer config --no-interaction repositories.tax-venia vcs https://github.com/PMET-public/module-tax-sample-data-venia
+    composer config --no-interaction repositories.sales-venia vcs https://github.com/PMET-public/module-sales-sample-data-venia
+    composer config --no-interaction repositories.media-venia vcs https://github.com/PMET-public/sample-data-media-venia
 
-    composer require magento/module-catalog-sample-data-venia:dev-master \
+    composer require --no-interaction magento/module-catalog-sample-data-venia:dev-master \
         magento/module-configurable-sample-data-venia:dev-master \
         magento/module-customer-sample-data-venia:dev-master \
         magento/module-tax-sample-data-venia:dev-master \
@@ -94,13 +94,13 @@ if [ "$MAGENTO_SAMPLE_DATA" == "venia" ]; then
         magento/sample-data-media-venia:dev-master \
         --no-update
 
-    composer update
+    composer update --no-interaction
 
     bin/magento setup:upgrade
 elif [ "$MAGENTO_SAMPLE_DATA" == "luma" ]; then
     echo "Installing 'Luma' Sample Data...";
-    composer suggests --all --list | grep "magento" | grep "sample-data" | xargs -i composer require {} --no-update
-    composer update
+    composer suggests --no-interaction --all --list | grep "magento" | grep "sample-data" | xargs -i composer require {} --no-update --no-interaction
+    composer update --no-interaction
     bin/magento setup:upgrade
 else
     echo "Skipping Sample Data Install...";
