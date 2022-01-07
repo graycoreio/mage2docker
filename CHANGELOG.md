@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0-0](https://github.com/graycoreio/mage2docker/compare/v5.0.0...v6.0.0-0) (2022-01-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* **.env:** COMPOSER_PROJECT_ENABLED is now true by default. If you want it to be false (the old default) you will need to update your .env.
+
+### Features
+
+* **.env:** make COMPOSER_PROJECT_ENABLED true by default ([1d7c97f](https://github.com/graycoreio/mage2docker/commit/1d7c97fdd1ed66516a7fdf003e978a824c3d4ad0))
+* added xdebug support to dolphin ([#43](https://github.com/graycoreio/mage2docker/issues/43)) ([f2936ed](https://github.com/graycoreio/mage2docker/commit/f2936edd77c1445206552b8c813da143f307166f))
+* **dolphin:** allow for sample data installation ([f8ac730](https://github.com/graycoreio/mage2docker/commit/f8ac730a08ab0cf6e6992329ce74ca856a2a395b))
+* extact welcome message and immediately exit setup on project discovery ([1ddce8c](https://github.com/graycoreio/mage2docker/commit/1ddce8cc7b81b6b1867bae2817caac22ad19c309))
+* improve welcome script ([73b5c41](https://github.com/graycoreio/mage2docker/commit/73b5c41d2587bd3bdf61555e9e5eae1079c7c7c4))
+* **magento2:** make mailhog enabled by default in Magento v2.4 ([c9e1b16](https://github.com/graycoreio/mage2docker/commit/c9e1b168a60e07b5938685bca8159736533676b3))
+* **nginx-develop:** auto-reload configuration automatically ([aea30e8](https://github.com/graycoreio/mage2docker/commit/aea30e8c9a65fc31e114402e67c0eccf9cbc6120))
+* update elasticsearch version ([#52](https://github.com/graycoreio/mage2docker/issues/52)) ([2c931ef](https://github.com/graycoreio/mage2docker/commit/2c931ef5ba04e5e26439bed74b9d34e4bebb27b1))
+* use pre-released 6.0.0 alpha images ([5408cb0](https://github.com/graycoreio/mage2docker/commit/5408cb09443706b7ac737b93f664043e72e0025f))
+
+
+### Bug Fixes
+
+* changed images to only to restart on failure ([#44](https://github.com/graycoreio/mage2docker/issues/44)) ([d400901](https://github.com/graycoreio/mage2docker/commit/d40090118b0566d1ba6bfb8c4ba1db6d6422d767))
+* limit elasticsearch memory consumption ([#53](https://github.com/graycoreio/mage2docker/issues/53)) ([a01e56e](https://github.com/graycoreio/mage2docker/commit/a01e56ee0567bc3f6e3e9b06452435e7df5b5173))
+* **magento2:** fixup a bad mailhog path ([8238e09](https://github.com/graycoreio/mage2docker/commit/8238e0921f3b5812e4905174d5b3c6ce2a1f5b95))
+* **setup:** checkout to /var/www/html in setup.sh ([#55](https://github.com/graycoreio/mage2docker/issues/55)) ([bdff428](https://github.com/graycoreio/mage2docker/commit/bdff4286a5fadc2e74a6a109b06834593ecb4c83))
+
 ## [5.0.0](https://github.com/graycoreio/mage2docker/compare/v4.1.0...v5.0.0) (2021-09-27)
 
 
