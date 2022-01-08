@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0-alpha.2](https://github.com/graycoreio/mage2docker/compare/v6.0.0-alpha.1...v6.0.0-alpha.2) (2022-01-08)
+
+
+### Bug Fixes
+
+* **setup:** add --no-interaction to composer commands ([#57](https://github.com/graycoreio/mage2docker/issues/57)) ([8dce3a7](https://github.com/graycoreio/mage2docker/commit/8dce3a7bcf932af0a10325383b5166bcb33d5ca2))
+
 ## [6.0.0-alpha.1](https://github.com/graycoreio/mage2docker/compare/v6.0.0-alpha.0...v6.0.0-alpha.1) (2022-01-07)
 
 ## [6.0.0-alpha.0](https://github.com/graycoreio/mage2docker/compare/v6.0.0-0...v6.0.0-alpha.0) (2022-01-07)
