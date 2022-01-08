@@ -12,7 +12,7 @@ services:
     extends:
       file: ./compose/base/base.yml
       service: magento2
-    image: graycore/magento-php:7.4-fpm-alpine-dolphin-6.0.0-alpha.0
+    image: graycore/magento-php:7.4-fpm-alpine-dolphin-v6.0.0-alpha.2
     environment:
     - CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH7_SERVER_HOSTNAME=elasticsearch
     - CONFIG__DEFAULT__CATALOG__SEARCH__ENGINE=elasticsearch7
