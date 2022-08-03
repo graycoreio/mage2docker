@@ -18,22 +18,22 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the graycore/magento-php:${{ matrix.php }}-fpm-alpine image
-      run: docker build ./php/${{ matrix.php }}/alpine
+      run: docker build ./php/${{ matrix.php }}/fpm-alpine
           -t graycore/magento-php:${{ matrix.php }}-fpm-alpine-${GITHUB_REF##*/}
           -t graycore/magento-php:${{ matrix.php }}-fpm-alpine
     
     - name: Build the graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop image
-      run: docker build ./php/${{ matrix.php }}/alpine-develop
+      run: docker build ./php/${{ matrix.php }}/fpm-alpine-develop
         -t graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-${GITHUB_REF##*/}
         -t graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop
 
     - name: Build the graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-xdebug image
-      run: docker build ./php/${{ matrix.php }}/alpine-develop-xdebug
+      run: docker build ./php/${{ matrix.php }}/fpm-alpine-develop-xdebug
         -t graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-xdebug-${GITHUB_REF##*/}
-        -t graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-xdebug
+        -t graycore/magento-php:${{ matrix.php }}-fpm-alpine-develop-xdebug+
 
     - name: Build the graycore/magento-php:${{ matrix.php }}-cli-alpine image
-      run: docker build ./php/${{ matrix.php }}/alpine-cli
+      run: docker build ./php/${{ matrix.php }}/cli-alpine
         -t graycore/magento-php:${{ matrix.php }}-cli-alpine-${GITHUB_REF##*/}
         -t graycore/magento-php:${{ matrix.php }}-cli-alpine
 
