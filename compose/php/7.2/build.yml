@@ -1,0 +1,6 @@
+version : '3'
+
+services:
+    magento2:
+      build: php/7.2/fpm-alpine-dolphin
+      image: graycore/magento-php:build
