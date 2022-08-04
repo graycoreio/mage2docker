@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         php: [7.2, 7.3, 7.4]
-        kind: [fpm-alpine, fpm-alpine-develop, fpm-alpine-develop-xdebug, cli-alpine]
+        kind: [fpm-alpine, fpm-alpine-develop, fpm-alpine-develop-xdebug, fpm-alpine-dolphin, cli-alpine]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
