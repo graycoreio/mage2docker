@@ -4,27 +4,14 @@
 
 This project intends to create an opinionated, performant, replicable, and production-like Magento 2 local development environment that leverages [Docker](https://www.docker.com/), [VSCode](https://code.visualstudio.com/) and [devcontainers](https://code.visualstudio.com/docs/remote/containers).
 
+<div align="center">
+
 [![graycore/magento2-php pulls](https://img.shields.io/docker/pulls/graycore/magento-php.svg?label=magento-php%20docker%20pulls)](https://hub.docker.com/r/graycore/magento-php)
-[![Mage2Docker Commit Activity](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg)](https://github.com/graycoreop/mage2docker/graphs/commit-activity)
-[![Mage2Docker MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/graycore/mage2docker/blob/master/LICENSE.md)
-[![Mage2Docker Gitter Chat](https://img.shields.io/badge/chat-%23mage2docker%20on%20Gitter-brightgreen.svg)](https://gitter.im/graycoreio/mage2docker)
-## Magento Version Support
-[![Magento Commerce Supported](https://img.shields.io/badge/Magento-Commerce-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)](https://magento.com/)
-[![Magento Opensource Supported](https://img.shields.io/badge/Magento-Opensource-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)](https://magento.com/)
+[![Mage2Docker Commit Activity](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg)](https://github.com/graycoreio/mage2docker/graphs/commit-activity)
+[![Mage2Docker MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/graycoreio/mage2docker/blob/master/LICENSE.md)
+[![Mappia Discord](https://img.shields.io/discord/908816550121857074?color=11689b)](http://chat.mappia.io/)
 
-[![Magento v2.3 Supported](https://img.shields.io/badge/Magento-2.3-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)](https://magento.com/)
-[![Magento v2.4 Supported](https://img.shields.io/badge/Magento-2.4-brightgreen.svg?labelColor=2f2b2f&logo=magento&logoColor=f26724&color=464246&longCache=true&style=flat)](https://magento.com/)
-
-## Compatibility Table
-| Magento Version | Mage2Docker Version | End of Release Life |
-|-----------------|---------------------|---------------------|
-| 2.2.*           | N/A                 | Dec 2019            |
-| <2.3.7          | v4.1.0              | Apr 2022            |
-| >=2.3.7         | >v5.0.0             | Apr 2022            |
-| 2.4.0           | v4.1.0              | Nov 2022            |
-| 2.4.1           | v4.1.0              | Nov 2022            |
-| 2.4.2           | >v5.0.0             | Nov 2022            |
-| 2.4.3           | >v5.0.0             | Nov 2022            |
+</div>
 
 ### Dolphin
 As of Mage2Docker v6.0.0, Dolphin is the new fully cross-platform Mage2docker environment that leverages VSCode `devcontainers` or Github Codespaces.
