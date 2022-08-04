@@ -24,15 +24,15 @@ if [ -f 'pub/index.php' ]; then
     exit 0;    
 elif [ "$COMPOSER_PROJECT_ENABLED" == true ]; then
     composer create-project --no-interaction --no-install --repository-url=https://repo.magento.com/ $COMPOSER_PROJECT . 
+    
+    composer config --no-interaction allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
+    composer config --no-interaction allow-plugins.laminas/laminas-dependency-plugin true
+    composer config --no-interaction allow-plugins.magento/* true
 else
     git clone $GIT_REPO --depth=1 .; 
 fi
 
 composer install --no-interaction
-
-composer config --no-interaction allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
-composer config --no-interaction allow-plugins.laminas/laminas-dependency-plugin true
-composer config --no-interaction allow-plugins.magento/* true
 
 bin/magento setup:install \
     --no-interaction \
