@@ -5,18 +5,22 @@ services:
     extends:
       file: ./compose/base/base.yml
       service: ingress
-    image: graycore/magento-nginx:1.18-alpine-develop
+    image: graycore/magento-nginx:1.18-alpine-develop-v6.0.0-alpha.2
     depends_on:
     - magento2
   magento2:
     extends:
       file: ./compose/base/base.yml
       service: magento2
-    image: graycore/magento-php:7.4-fpm-alpine-develop
+    image: graycore/magento-php:7.4-fpm-alpine-dolphin-v6.0.0-alpha.2
     environment:
     - CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH7_SERVER_HOSTNAME=elasticsearch
     - CONFIG__DEFAULT__CATALOG__SEARCH__ENGINE=elasticsearch7
     - CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH7_SERVER_PORT=9200
+    - PHP_SENDMAIL_PATH=/usr/sbin/sendmail -S mailhog:1025
+    - XDEBUG_CLIENT_PORT=9003
+    - XDEBUG_CLIENT_HOST=localhost
+    - XDEBUG_MODE=debug
   database:
     extends:
       file: ./compose/base/base.yml
@@ -54,6 +58,12 @@ services:
       resources:
         limits:
           memory: 2G
+  mailhog:
+    extends:
+      file: ./compose/mailhog/1.0.yaml
+      service: mailhog
+    networks:
+      - backend
 networks:
   frontend:
   backend:
