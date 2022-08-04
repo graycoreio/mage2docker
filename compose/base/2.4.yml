@@ -5,7 +5,7 @@ services:
     extends:
       file: ./compose/base/base.yml
       service: ingress
-    image: graycore/magento-nginx:1.18-alpine-develop-6.0.0-alpha.0
+    image: graycore/magento-nginx:1.18-alpine-develop-v6.0.0-alpha.2
     depends_on:
     - magento2
   magento2:
