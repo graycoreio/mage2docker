@@ -41,19 +41,15 @@ jobs:
     strategy:
       matrix:
         nginx: [1.18, 1.19]
+        kind: [alpine, alpine-develop]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Build the graycore/magento-nginx:${{ matrix.nginx }}-alpine image
-        run: docker build ./nginx/${{ matrix.nginx }}/alpine
-          -t graycore/magento-nginx:${{ matrix.nginx }}-alpine-${GITHUB_REF##*/}
-          -t graycore/magento-nginx:${{ matrix.nginx }}-alpine
+      - name: Build the graycore/magento-nginx:${{ matrix.nginx }}-${{ matrix.kind }} image
+        run: docker build ./nginx/${{ matrix.nginx }}/${{ matrix.kind }}
+          -t graycore/magento-nginx:${{ matrix.nginx }}-${{ matrix.kind }}-${GITHUB_REF##*/}
+          -t graycore/magento-nginx:${{ matrix.nginx }}-${{ matrix.kind }}
 
-      - name: Build the graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop image
-        run: docker build ./nginx/${{ matrix.nginx }}/alpine-develop
-          -t graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop-${GITHUB_REF##*/}
-          -t graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop
-      
       - name: Login to registry
         if: ${{ github.event_name == 'release' }}
         run: docker login -u $DOCKER_USER -p $DOCKER_PASS
@@ -61,18 +57,10 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
       
-      - name: Publish graycore/magento-nginx:${{ matrix.nginx }}-alpine image
+      - name: Publish graycore/magento-nginx:${{ matrix.nginx }}-${{ matrix.kind }} image
         if: ${{ github.event_name == 'release' }}
-        run: docker push graycore/magento-nginx:${{ matrix.nginx }}-alpine
+        run: docker push graycore/magento-nginx:${{ matrix.nginx }}-${{ matrix.kind }}
 
-      - name: Publish graycore/magento-nginx:${{ matrix.nginx }}-alpine-${GITHUB_REF##*/} image
+      - name: Publish graycore/magento-nginx:${{ matrix.nginx }}-${{ matrix.kind }}-${GITHUB_REF##*/} image
         if: ${{ github.event_name == 'release' }}
-        run: docker push graycore/magento-nginx:${{ matrix.nginx }}-alpine-${GITHUB_REF##*/}
-
-      - name: Publish graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop image
-        if: ${{ github.event_name == 'release' }}
-        run: docker push graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop
-      
-      - name: Publish graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop-${GITHUB_REF##*/} image
-        if: ${{ github.event_name == 'release' }}
-        run: docker push graycore/magento-nginx:${{ matrix.nginx }}-alpine-develop-${GITHUB_REF##*/}
+        run: docker push graycore/magento-nginx:${{ matrix.nginx }}-${{ matrix.kind }}-${GITHUB_REF##*/}
