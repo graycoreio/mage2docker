@@ -1,0 +1,15 @@
+function welcomeMessage() {
+    printf "\n*    __  ___              ___  ___           __           "
+    printf "\n*   /  |/  /__ ____ ____ |_  |/ _ \___  ____/ /_____ ____ "
+    printf "\n*  / /|_/ / _ \`/ _ \`/ -_) __// // / _ \/ __/  \'_/ -_) __/ "
+    printf "\n* /_/  /_/\_,_/\_, /\__/____/____/\___/\__/_/\_\\__/_/    "
+    printf "\n*             /___/                                       "
+    printf "\n*---------------------------------"
+    printf "\n* Wake me, when you need me."
+    printf "\n*"
+    printf "\n* Visit your store in your browser at https://$PROJECT_DOMAIN"
+    printf "\n* You can access the Admin UI at https://$PROJECT_DOMAIN/$MAGENTO_ADMIN_PATH" 
+    printf "\n* Username: $MAGENTO_ADMIN_USERNAME"
+    printf "\n* Password: $MAGENTO_ADMIN_PASSWORD"
+    printf "\n---------------------------------\n"
+}
