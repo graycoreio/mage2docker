@@ -119,4 +119,4 @@ bin/magento deploy:mode:set developer
 welcomeMessage;
 
 SETUP_END=`date +%s`       
-echo "Setup took: $((SETUP_END-SETUP_START)) seconds..."      
+echo "Setup took: $((SETUP_END-SETUP_START)) seconds."      
