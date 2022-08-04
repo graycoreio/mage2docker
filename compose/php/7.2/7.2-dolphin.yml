@@ -2,7 +2,7 @@ version: "3"
 
 services:
   magento2:
-    image: graycore/magento-php:7.2-fpm-alpine-dolphin-6.0.0-alpha.0
+    image: graycore/magento-php:7.2-fpm-alpine-dolphin-v6.0.0-alpha.2
     environment:
       XDEBUG_REMOTE_PORT: "9002"
-      XDEBUG_REMOTE_HOST: ""localhost""
+      XDEBUG_REMOTE_HOST: "localhost"
