@@ -1,0 +1,36 @@
+{
+    "workspaceFolder": "/var/www/html",
+    "forwardPorts": [
+        80,
+        443,
+        8025
+    ],
+    "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "felixfbecker.php-debug",
+        "ikappas.phpcs",
+        "neilbrayfield.php-docblocker",
+        "valeryanm.vscode-phpsab"
+	],
+	"service": "magento2",
+    "shutdownAction": "stopCompose",
+    "dockerComposeFile": [
+        "../docker-compose.yml",
+        "../compose/base/2.4.yml",
+        "../compose/sync/containersync.yml"
+    ],
+    "settings": {
+        "terminal.integrated.profiles.linux": {
+            "bash": {
+                "path": "sh",
+                "icon": "terminal-linux"
+            }
+        }
+    },
+    "initializeCommand": "cp -u .env.sample .env",
+    "postCreateCommand": [
+        "/bin/sh",
+        "-c",
+        "/root/setup.sh"
+    ]
+}
