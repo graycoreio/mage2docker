@@ -30,6 +30,10 @@ fi
 
 composer install --no-interaction
 
+composer config --no-interaction allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
+composer config --no-interaction allow-plugins.laminas/laminas-dependency-plugin true
+composer config --no-interaction allow-plugins.magento/* true
+
 bin/magento setup:install \
     --no-interaction \
     --base-url=https://$PROJECT_DOMAIN \
