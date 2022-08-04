@@ -56,6 +56,9 @@ By default this project uses [Mage-OS](https://mage-os.org/). To use Adobe's Mag
 2. Change the `COMPOSER_PROJECT_REPO` variable in `.env` file to `https://repo.magento.com/`
 
 
+### Using Venia Data Sample
+For now, if you want to use Venia data sample you'll need to configure your `auth.json` because it is only available repo.magento.com. Please follow [these steps](./composer/auth.md) to set up composer's `auth.json`
+
 ### Start your environment
 From your `mage2docker` repo:
 
