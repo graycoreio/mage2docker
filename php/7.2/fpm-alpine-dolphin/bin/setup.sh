@@ -79,7 +79,7 @@ bin/magento config:set web/seo/use_rewrites 1
 
 if [ "$MAGENTO_SAMPLE_DATA" == "venia" ]; then 
     echo "Installing 'Venia' Sample Data...";
-    composer config --no-interaction --ansi repositories.venia-sample-data composer https://repo.magento.com
+    composer config --no-interaction --ansi repositories.venia-sample-data composer $COMPOSER_PROJECT_REPO
     composer require --no-interaction --ansi magento/venia-sample-data:*
 
     bin/magento setup:upgrade
