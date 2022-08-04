@@ -53,7 +53,7 @@ If you're using [WSL2, use this instead.](https://github.com/microsoft/WSL/issue
 ### Magento Open Source and Adobe Commerce Only - Composer auth.json
 By default this project uses [Mage-OS](https://mage-os.org/). To use Adobe's Magento Open Source or Adobe Commerce you will need to:
 1. Follow [these steps](./composer/auth.md) to configure composer's `auth.json` with your Magento Account credentials. 
-2. Change the repository variable in `.env` file to `https://repo.magento.com/`
+2. Change the `COMPOSER_PROJECT_REPO` variable in `.env` file to `https://repo.magento.com/`
 
 
 ### Start your environment
