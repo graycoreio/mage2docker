@@ -16,7 +16,7 @@ jobs:
       DOCKER_TAG_NAME: ${{ github.head_ref || github.ref_name }}
     strategy:
       matrix:
-        php: [7.2, 7.3, 7.4]
+        php: [7.2, 7.3, 7.4, 8.1]
         kind: [fpm-alpine, cli-alpine]
         include:
         # Note that this is not parallelizable, there are dependencies 
