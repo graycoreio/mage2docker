@@ -36,7 +36,7 @@ cp /path/to/magento/project/auth.json.sample ~/.composer/auth.json
 ``` 
 
 #### Codespaces configuration
-Github codespace allows you to create secret environment variables that are injected in your container when it is created.
+Github Codespaces allows you to create secret environment variables that are injected in your container when it is created.
 To do so, go to **Settings -> Codespaces** and there you'll see a `Codespaces secrets` section. Click on New Secret, name it **`COMPOSER_AUTH`** and put the complete authorization json in the value
 
 ### Per-project configuration
