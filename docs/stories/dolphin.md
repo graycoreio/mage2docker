@@ -17,7 +17,9 @@ git clone https://www.github.com/graycoreio/mage2docker \
 [The process of creating a Magento account is fully documented by Magento and you should follow their process](https://docs.magento.com/m2/ce/user_guide/magento/magento-account-create.html). 
 
 ### Configuring Composer
-In case you have not done so, we will add your Magento composer authentication credentials to your user's local `auth.json`.
+In case you have not done so, we will add your Magento composer authentication credentials to your user's local `auth.json`. Alternatively, if you are using codespaces you can create a new secret that will be injected in your container
+
+#### Local devcontainer
 
 First check to see if you have a credentials file under `~/.composer/auth.json`.
 
@@ -32,6 +34,10 @@ If you don't see your credentials there, [you can follow the Magento 2 guide to 
 ```bash
 cp /path/to/magento/project/auth.json.sample ~/.composer/auth.json
 ``` 
+
+#### Codespaces configuration
+Github codespace allows you to create secret environment variables that are injected in your container when it is created.
+To do so, go to **Settings -> Codespaces** and there you'll see a `Codespaces secrets` section. Click on New Secret, name it **`COMPOSER_AUTH`** and put the complete authorization json in the value
 
 ### Per-project configuration
 We recommend using `auth.json` in your user's directory, but when you're working on multiple Magento 2 applications at once, you may need multiple `auth.json`. You can simply add the `auth.json` to the root of your Magento 2 project after project creation, and composer will use those credentials instead.
