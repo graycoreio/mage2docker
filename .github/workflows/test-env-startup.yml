@@ -24,7 +24,7 @@ jobs:
     - uses: actions/cache@v2
       with:
         path: ${{ steps.composer-cache.outputs.dir }}
-        key: ${{ runner.os }}-composer-${{ matrix.COMPOSER_PROJECT }}
+        key: ${{ runner.os }}-composer-${{ matrix.COMPOSER_PROJECT }}-v1.0
         restore-keys: |
           ${{ runner.os }}-composer-
     - name: Add HTTP basic auth credentials for composer
