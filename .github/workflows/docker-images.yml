@@ -18,7 +18,7 @@ jobs:
         kind: [fpm-alpine, fpm-alpine-develop, fpm-alpine-develop-xdebug, fpm-alpine-dolphin, cli-alpine]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
     - name: Build the graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }} image
       run: docker build ./php/${{ matrix.php }}/${{ matrix.kind }}
           -t graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }}-${GITHUB_REF##*/}
@@ -45,7 +45,7 @@ jobs:
         kind: [alpine, alpine-develop]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - name: Build the graycore/magento-nginx:${{ matrix.nginx }}-${{ matrix.kind }} image
         run: docker build ./nginx/${{ matrix.nginx }}/${{ matrix.kind }}
           -t graycore/magento-nginx:${{ matrix.nginx }}-${{ matrix.kind }}-${GITHUB_REF##*/}

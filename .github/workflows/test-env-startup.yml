@@ -16,7 +16,7 @@ jobs:
           COMPOSER_PROJECT: ["magento/project-community-edition=2.3.*", "magento/project-community-edition=2.4.*"]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
     - name: Get Composer Cache Directory
       id: composer-cache
       run: |
