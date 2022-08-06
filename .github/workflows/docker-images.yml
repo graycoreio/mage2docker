@@ -26,7 +26,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }} image
       run: for kind in ${{ matrix.kind }}; do docker build ./php/${{ matrix.php }}/$kind
-          -t graycore/magento-php:${{ matrix.php }}-$kind-$GITHUB_REF
+          -t graycore/magento-php:${{ matrix.php }}-$kind-$GITHUB_SHA
           -t graycore/magento-php:${{ matrix.php }}-$kind; done;
     
     - name: Login to registry
