@@ -28,7 +28,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-composer-
     - name: Add HTTP basic auth credentials for composer
-      run: echo '${{ secrets.COMPOSER_AUTH_JSON }}' > ~/.composer/auth.json
+      run: echo '${{ secrets.COMPOSER_AUTH }}' > ~/.composer/auth.json
     - name: Define the .env
       run: mv .env.sample .env
     - name: Configure the .env
