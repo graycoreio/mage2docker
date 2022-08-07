@@ -60,7 +60,7 @@ services:
           memory: 2G
   mailhog:
     extends:
-      file: ./compose/mailhog/1.0.yaml
+      file: ./compose/mailhog/1.0.yml
       service: mailhog
     networks:
       - backend
