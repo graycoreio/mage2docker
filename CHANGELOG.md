@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0-alpha.3](https://github.com/graycoreio/mage2docker/compare/v5.0.0...v6.0.0-alpha.3) (2022-08-07)
+
+
+### Features
+
+* add a devcontainer.json that uses dolphin ([#64](https://github.com/graycoreio/mage2docker/issues/64)) ([708fbe7](https://github.com/graycoreio/mage2docker/commit/708fbe715d9c661ceab43d81a4f88d062728be99))
+* add images for php 8.1 ([#70](https://github.com/graycoreio/mage2docker/issues/70)) ([8d25097](https://github.com/graycoreio/mage2docker/commit/8d250976755099467e9d1b6fa9afd5dff85ba388))
+* adding elasticsearch 7.16.1 ([#51](https://github.com/graycoreio/mage2docker/issues/51)) ([5127f9d](https://github.com/graycoreio/mage2docker/commit/5127f9d982884d46b2228f0c0cd85a2d5015a20c))
+* enforce `yml` file names ([#75](https://github.com/graycoreio/mage2docker/issues/75)) ([4e2d333](https://github.com/graycoreio/mage2docker/commit/4e2d33313deabe361435979d9f76ba25ac49fa98))
+* **env:** add revised ENV for dolphin ([#64](https://github.com/graycoreio/mage2docker/issues/64)) ([9020d1e](https://github.com/graycoreio/mage2docker/commit/9020d1eca8856fac1052791810ca5b6609c6c801))
+* **nginx:** add auto-reloading ([#64](https://github.com/graycoreio/mage2docker/issues/64)) ([8637597](https://github.com/graycoreio/mage2docker/commit/863759737bdca5a96c0a753ddcd363d9cc8773a9))
+* **php:** add new dolphin base images for php 7.2, 7.3, and 7.4 ([#64](https://github.com/graycoreio/mage2docker/issues/64)) ([db7a950](https://github.com/graycoreio/mage2docker/commit/db7a9501f448b9b38a344aa30418c4b63c1624de))
+* **php:** add, use new configurations for dolphin php ([#64](https://github.com/graycoreio/mage2docker/issues/64)) ([d4d1c78](https://github.com/graycoreio/mage2docker/commit/d4d1c7892136c65e6a322a3839e5231fa34064f2))
+* **sync:** add new container sync strategy ([#64](https://github.com/graycoreio/mage2docker/issues/64)) ([35fe4db](https://github.com/graycoreio/mage2docker/commit/35fe4dbc783e400638c204e6dba2b0e470933ade))
+
+
+### Bug Fixes
+
+* dont restart mysql always, only on failure ([#44](https://github.com/graycoreio/mage2docker/issues/44)) ([c999ac2](https://github.com/graycoreio/mage2docker/commit/c999ac265b10c5db3e69370206bccc040e6571f9))
+* limit elasticsearch memory consumption ([#54](https://github.com/graycoreio/mage2docker/issues/54)) ([5521a05](https://github.com/graycoreio/mage2docker/commit/5521a057dbcd06c46c3620210d431e526e964de6))
+
 ## [5.0.0](https://github.com/graycoreio/mage2docker/compare/v4.1.0...v5.0.0) (2021-09-27)
 
 
