@@ -36,13 +36,13 @@ jobs:
         DOCKER_USER: ${{ secrets.DOCKER_USER }}
         DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
     
-    - name: Publish latest graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }} image
+    - name: Publish latest graycore/magento-php images
       if: ${{ github.event_name == 'release' }}
-      run: docker push graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }}
+      run: for kind in ${{ matrix.kind }}; do docker push graycore/magento-php:${{ matrix.php }}-$kind; done;
 
-    - name: Publish tag graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }}-${GITHUB_REF##*/} image
+    - name: Publish ${{ github.ref_name}} tag graycore/magento-php:${{ matrix.php }} images
       if: ${{ github.event_name == 'release' }}
-      run: docker push graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }}-${GITHUB_REF##*/}
+      run: for kind in ${{ matrix.kind }}; docker push graycore/magento-php:${{ matrix.php }}-$kind-${{ github.ref_name}}; done;
   build-nginx:
     strategy:
       matrix:
