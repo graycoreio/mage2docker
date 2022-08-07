@@ -1,9 +1,8 @@
 version: "3"
-
 services:
   magento2:
     image: graycore/magento-php:7.4-fpm-alpine-dolphin-v6.0.0-alpha.2
     environment:
       XDEBUG_CLIENT_PORT: "9003"
-      XDEBUG_CLIENT_HOST: "localhost"
-      XDEBUG_MODE: "debug"
+      XDEBUG_CLIENT_HOST: localhost
+      XDEBUG_MODE: debug
