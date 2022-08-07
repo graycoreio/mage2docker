@@ -1,6 +1,14 @@
 {
     "bumpFiles": [
         {
+            "filename": "package.json",
+            "type": "json"
+        },
+        {
+            "filename": "package-lock.json",
+            "type": "json"
+        },
+        {
             "filename": "compose/base/2.3.yml",
             "updater": "tools/standard-version/compose-yml"
         },
