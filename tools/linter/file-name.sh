@@ -12,7 +12,7 @@ if [ $count != 0 ]
     for item in $paths; do 
         echo $item;
     done;
-    exit 255;
-then 
     exit 1;
+then 
+    exit 0;
 fi 
