@@ -34,7 +34,7 @@ jobs:
     - name: Build the graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }} dependent images
       run: for image in ${{ matrix.extrasImages }}; do docker build ./php/${{ matrix.php }}/$image
           -t graycore/magento-php:${{ matrix.php }}-$image-$GITHUB_SHA
-          -t graycore/magento-php:${{ matrix.php }}-$image
+          -t graycore/magento-php:${{ matrix.php }}-$image; done;
 
     - name: Login to registry
       run: docker login -u $DOCKER_USER -p $DOCKER_PASS
@@ -57,7 +57,7 @@ jobs:
 
     - name: Publish graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }}-${{ github.ref_name }} dependent images
       if: ${{ github.event_name == 'release' }}
-      run: for image in ${{ matrix.extrasImages }}; docker push graycore/magento-php:${{ matrix.php }}-$image-${{ github.ref_name }}; done;
+      run: for image in ${{ matrix.extrasImages }}; do docker push graycore/magento-php:${{ matrix.php }}-$image-${{ github.ref_name }}; done;
   build-nginx:
     strategy:
       matrix:
