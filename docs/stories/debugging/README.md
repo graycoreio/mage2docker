@@ -11,7 +11,7 @@ This tutorial will help you set up a debugger for your local Mage2docker environ
 
 ## Usage
 
-1. To use xdebug with Mage2docker, simply open your `.env` and append `:compose/php/7.3/7.3-xdebug.yaml` to your `COMPOSE_FILE` key.
+1. To use xdebug with Mage2docker, simply open your `.env` and append `:compose/php/7.3/7.3-xdebug.yml` to your `COMPOSE_FILE` key.
 
 > Replace the php version with the supported php version of your choice.
 

@@ -1,0 +1,16 @@
+name: Lint
+
+on:
+  pull_request:
+    paths:
+      - '**'
+      - '!docs/**'
+      - '!**/*.md'
+    branches:
+      - master
+jobs:
+  build-php:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: npm run lint

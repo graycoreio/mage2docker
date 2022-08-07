@@ -1,2 +1,2 @@
 # Mailhog service
-For development environments, the service mailhog helps to test emails locally, it's declared in the [docker-compose](../../../compose/mailhog/1.0.yaml) and exports two ports, the first one is 1025 that it's used for smtp server, and the 8025 is a web interface.
+For development environments, the service mailhog helps to test emails locally, it's declared in the [docker-compose](../../../compose/mailhog/1.0.yml) and exports two ports, the first one is 1025 that it's used for smtp server, and the 8025 is a web interface.

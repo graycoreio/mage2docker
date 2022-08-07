@@ -8,7 +8,8 @@
   },
   "private": true,
   "scripts": {
-    "release": "standard-version --sign"
+    "release": "standard-version --sign",
+    "lint": "./tools/linter/file-name.sh"
   },
   "repository": {
     "type": "git",
