@@ -12,6 +12,8 @@ on:
       - master
 jobs:
   build-php:
+    env:
+      DOCKER_TAG_NAME: ${{ github.head_ref || github.ref_name }}
     strategy:
       matrix:
         php: [7.2, 7.3, 7.4]
@@ -28,12 +30,12 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }} image
       run: docker build ./php/${{ matrix.php }}/${{ matrix.kind }}
-          -t graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }}-${{ github.ref_name }}
+          -t graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }}-$DOCKER_TAG_NAME
           -t graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }}
 
     - name: Build the graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }} dependent images
       run: for image in ${{ matrix.extrasImages }}; do docker build ./php/${{ matrix.php }}/$image
-          -t graycore/magento-php:${{ matrix.php }}-$image-${{ github.ref_name }}
+          -t graycore/magento-php:${{ matrix.php }}-$image-$DOCKER_TAG_NAME
           -t graycore/magento-php:${{ matrix.php }}-$image; done;
 
     - name: Login to registry
@@ -47,17 +49,17 @@ jobs:
       if: ${{ github.event_name == 'release' }}
       run: docker push graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }}
 
-    - name: Publish graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }}-${{ github.ref_name }}
+    - name: Publish graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }}-$DOCKER_TAG_NAME
       if: ${{ github.event_name == 'release' }}
-      run: docker push graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }}-${{ github.ref_name }}
+      run: docker push graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }}-$DOCKER_TAG_NAME
 
     - name: Publish latest graycore/magento-php:${{ matrix.php }} dependent images
       if: ${{ github.event_name == 'release' }}
       run: for image in ${{ matrix.extrasImages }}; do docker push graycore/magento-php:${{ matrix.php }}-$image; done;
 
-    - name: Publish graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }}-${{ github.ref_name }} dependent images
+    - name: Publish graycore/magento-php:${{ matrix.php }}-${{ matrix.kind }}-$DOCKER_TAG_NAME dependent images
       if: ${{ github.event_name == 'release' }}
-      run: for image in ${{ matrix.extrasImages }}; do docker push graycore/magento-php:${{ matrix.php }}-$image-${{ github.ref_name }}; done;
+      run: for image in ${{ matrix.extrasImages }}; do docker push graycore/magento-php:${{ matrix.php }}-$image-$DOCKER_TAG_NAME; done;
   build-nginx:
     strategy:
       matrix:
