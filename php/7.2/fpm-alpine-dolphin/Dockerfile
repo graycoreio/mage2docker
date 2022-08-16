@@ -13,7 +13,7 @@ RUN version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
     && rm -rf /tmp/blackfire /tmp/blackfire-probe.tar.gz
 
 RUN apk add --no-cache \
-  openssh patch gnupg git pcre-dev ${PHPIZE_DEPS} \ 
+  openssh gnupg git pcre-dev ${PHPIZE_DEPS} \ 
   && pecl install xdebug-2.9.8 \
   && docker-php-ext-enable xdebug \
   && apk del pcre-dev ${PHPIZE_DEPS}

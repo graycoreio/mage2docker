@@ -14,7 +14,8 @@ RUN apk add --no-cache \
   libsodium-dev \
   mysql-client \
   procps \
-  zip
+  zip \
+  patch
 
 # https://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#required-php-extensions
 # This layer must be run as one, not two - See: https://github.com/docker-library/php/issues/855
