@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [6.0.0-alpha.4](https://github.com/graycoreio/mage2docker/compare/v6.0.0-alpha.3...v6.0.0-alpha.4) (2022-08-17)
+
+
+### Features
+
+* add patch to base cli and fpm images ([#78](https://github.com/graycoreio/mage2docker/issues/78)) ([a77b64a](https://github.com/graycoreio/mage2docker/commit/a77b64a981bb7f9edef1d02ef01fb554a50d4d2f))
+
 ## [6.0.0-alpha.3](https://github.com/graycoreio/mage2docker/compare/v5.0.0...v6.0.0-alpha.3) (2022-08-07)
 
 
