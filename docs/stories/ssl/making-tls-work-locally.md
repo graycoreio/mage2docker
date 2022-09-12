@@ -15,7 +15,7 @@ Next, we'll generate a certificate and put it in the right directory for Mage2Do
 
 ```bash
 mkcert -key-file magento2.test.key -cert-file magento2.test.pem magento2.test
-mkdir -p nginx/certs && mv magento2.test.key nginx/certs/magento2.test.key && mv magento2.test.pem nginx/certs/magento2.test.pem
+mkdir -p nginx/certs && mv magento2.test.key nginx/certs/ && mv magento2.test.pem nginx/certs/
 ```
 
 ## Enabling Local Cert Mounting with Mage2Docker
