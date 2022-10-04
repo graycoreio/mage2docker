@@ -23,7 +23,7 @@ if [ -f 'pub/index.php' ]; then
     echo "Setup took: $((SETUP_END-SETUP_START)) seconds..."         
     exit 0;    
 elif [ "$COMPOSER_PROJECT_ENABLED" == true ]; then
-    composer create-project --no-interaction --no-install --repository-url=https://repo.magento.com/ $COMPOSER_PROJECT . 
+    composer create-project --no-interaction --no-install --repository-url=$COMPOSER_PROJECT_REPO $COMPOSER_PROJECT . 
 
     composer config --no-interaction allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
     composer config --no-interaction allow-plugins.laminas/laminas-dependency-plugin true
@@ -83,7 +83,7 @@ bin/magento config:set web/seo/use_rewrites 1
 
 if [ "$MAGENTO_SAMPLE_DATA" == "venia" ]; then 
     echo "Installing 'Venia' Sample Data...";
-    composer config --no-interaction --ansi repositories.venia-sample-data composer https://repo.magento.com
+    composer config --no-interaction --ansi repositories.venia-sample-data composer https://repo.magento.com/
     composer require --no-interaction --ansi magento/venia-sample-data:*
 
     bin/magento setup:upgrade
