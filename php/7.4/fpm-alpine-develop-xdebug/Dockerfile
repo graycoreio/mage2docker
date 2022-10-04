@@ -9,6 +9,6 @@ RUN apk --no-cache add pcre-dev ${PHPIZE_DEPS} \
   && docker-php-ext-enable xdebug \
   && apk del pcre-dev ${PHPIZE_DEPS}
 
-COPY conf/php.ini /usr/local/etc/php/
+COPY conf/x-debug-php.ini /usr/local/etc/php/conf.d
 
 USER app:app
