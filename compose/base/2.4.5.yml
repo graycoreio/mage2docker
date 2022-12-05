@@ -1,0 +1,47 @@
+version : '3'
+
+services:
+  ingress:
+    extends:
+      file: ./compose/base/2.4.yml
+      service: ingress
+  magento2:
+    extends:
+      file: ./compose/base/2.4.yml
+      service: magento2
+    image: graycore/magento-php:8.1-fpm-alpine-develop
+  database:
+    extends:
+      file: ./compose/base/2.4.yml
+      service: database
+  cache:
+    extends:
+      file: ./compose/base/2.4.yml
+      service: cache
+  message_queue:
+    extends:
+      file: ./compose/base/2.4.yml
+      service: message_queue
+    image: rabbitmq:3.5
+  fullpagecache:
+    extends:
+      file: ./compose/base/2.4.yml
+      service: fullpagecache
+  sessioncache:
+    extends:
+      file: ./compose/base/2.4.yml
+      service: sessioncache
+  elasticsearch:
+    extends:
+      file: ./compose/base/2.4.yml
+      service: elasticsearch
+  mailhog:
+    extends:
+      file: ./compose/base/2.4.yml
+      service: mailhog
+networks:
+  frontend:
+  backend:
+volumes:
+  db_data:
+  es_data:
