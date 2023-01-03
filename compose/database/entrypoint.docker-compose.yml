@@ -1,0 +1,6 @@
+version: '3'
+
+services:
+  database:
+    volumes:
+    - ../../mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
